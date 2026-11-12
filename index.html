@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bellachérie. — Made by a Woman, for Women</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-cream: #FDF9F7;
+      --bg-card: #FFFFFF;
+      --blush-soft: #F7E8E6;
+      --rose-muted: #D8A39D;
+      --rose-deep: #A6635C;
+      --text-dark: #3A2D2C;
+      --text-muted: #7C6A68;
+      --border-soft: #EEDAD7;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding-bottom: 90px;
+    }
+
+    h1, h2, h3, .serif {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 24px 18px;
+    }
+
+    /* Banner Kalender Otomatis */
+    .holiday-banner {
+      background: linear-gradient(135deg, var(--rose-deep), #8C4E48);
+      color: #fff;
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 0.85rem;
+      letter-spacing: 0.3px;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 32px 12px 24px;
+    }
+    .brand-title {
+      font-size: 2.8rem;
+      letter-spacing: 1px;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+    .brand-tagline {
+      font-style: italic;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      color: var(--rose-deep);
+      margin-bottom: 22px;
+    }
+
+    /* Link Buttons (PDF & Canva) */
+    .link-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .btn-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      padding: 15px 20px;
+      border-radius: 16px;
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 500;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 15px rgba(166, 99, 92, 0.05);
+      transition: all 0.25s ease;
+    }
+    .btn-link:hover {
+      transform: translateY(-2px);
+      border-color: var(--rose-muted);
+      background: var(--blush-soft);
+    }
+    .btn-link.primary-pdf {
+      background: var(--blush-soft);
+      border-color: var(--rose-muted);
+    }
+    .badge-lang {
+      font-size: 0.72rem;
+      background: var(--rose-deep);
+      color: #fff;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+
+    /* Section Card */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      border-radius: 20px;
+      padding: 22px;
+      margin-bottom: 24px;
+      box-shadow: 0 6px 20px rgba(166, 99, 92, 0.04);
+    }
+    .section-title {
+      font-size: 1.75rem;
+      margin-bottom: 6px;
+      color: var(--text-dark);
+    }
+    .section-sub {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    /* Form Inputs */
+    .form-group { margin-bottom: 14px; }
+    label {
+      display: block;
+      font-size: 0.83rem;
+      font-weight: 500;
+      margin-bottom: 5px;
+      color: var(--text-dark);
+    }
+    input[type="text"], input[type="date"], input[type="number"], select, textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid var(--border-soft);
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      background: var(--bg-cream);
+      color: var(--text-dark);
+      outline: none;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--rose-deep);
+      background: #fff;
+    }
+    .checkbox-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.86rem;
+      margin: 10px 0;
+      cursor: pointer;
+    }
+    .checkbox-row input { margin-top: 4px; accent-color: var(--rose-deep); }
+
+    /* Promo Status Pill */
+    .promo-summary {
+      background: var(--blush-soft);
+      border-radius: 12px;
+      padding: 12px 15px;
+      font-size: 0.84rem;
+      margin-top: 12px;
+      border: 1px dashed var(--rose-muted);
+    }
+    .promo-tag {
+      display: inline-block;
+      background: var(--rose-deep);
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 2px 9px;
+      border-radius: 10px;
+      margin: 3px 4px 3px 0;
+    }
+
+    /* Product Grid */
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    @media (max-width: 480px) {
+      .product-grid { grid-template-columns: 1fr; }
+    }
+    .product-item {
+      border: 1px solid var(--border-soft);
+      border-radius: 16px;
+      padding: 14px;
+      background: var(--bg-cream);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .product-placeholder {
+      height: 140px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #F7E8E6, #EFE1DF);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--rose-deep);
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      text-align: center;
+      padding: 10px;
+    }
+    .product-name { font-weight: 600; font-size: 0.95rem; margin-bottom: 4px; }
+    .product-price { color: var(--rose-deep); font-weight: 600; font-size: 0.9rem; margin-bottom: 10px; }
+
+    /* Buttons */
+    .btn {
+      background: var(--rose-deep);
+      color: #fff;
+      border: none;
+      padding: 11px 16px;
+      border-radius: 12px;
+      font-family: inherit;
+      font-weight: 500;
+      font-size: 0.88rem;
+      cursor: pointer;
+      width: 100%;
+      transition: 0.2s;
+    }
+    .btn:hover { background: #8E4F49; }
+    .btn:disabled {
+      background: #D3C5C4;
+      cursor: not-allowed;
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--rose-deep);
+      color: var(--rose-deep);
+    }
+    .btn-outline:hover { background: var(--blush-soft); }
+
+    /* Cart Section */
+    .cart-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border-soft);
+      font-size: 0.88rem;
+    }
+    .qty-controls button {
+      background: var(--blush-soft);
+      border: none;
+      width: 26px;
+      height: 26px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      color: var(--rose-deep);
+    }
+    .note-box {
+      background: #FFF6EB;
+      border: 1px solid #F0D6B8;
+      color: #7A542E;
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-size: 0.8rem;
+      margin-top: 10px;
+      display: none;
+    }
+
+    /* Rules Box */
+    .rules-box {
+      background: var(--bg-cream);
+      border: 1px solid var(--border-soft);
+      border-radius: 14px;
+      padding: 16px;
+      font-size: 0.84rem;
+      max-height: 230px;
+      overflow-y: auto;
+      margin-bottom: 14px;
+    }
+    .rules-box ul { padding-left: 18px; }
+    .rules-box li { margin-bottom: 8px; }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(58, 45, 44, 0.55);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      z-index: 999;
+    }
+    .modal-content {
+      background: #fff;
+      border-radius: 20px;
+      max-width: 520px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 24px;
+      position: relative;
+    }
+    .close-modal {
+      position: absolute;
+      top: 16px;
+      right: 18px;
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: var(--text-muted);
+    }
+    .review-card {
+      background: var(--bg-cream);
+      border: 1px solid var(--border-soft);
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 10px;
+      font-size: 0.86rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 12px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .ig-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 22px;
+      border-radius: 30px;
+      background: var(--text-dark);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Banner Status Kalender Hari Besar Otomatis -->
+  <div id="holidayBanner" class="holiday-banner">
+    Memeriksa kalender promo hari ini...
+  </div>
+
+  <div class="container">
+    <!-- HEADER -->
+    <header>
+      <h1 class="brand-title">Bellachérie.</h1>
+      <p class="brand-tagline">Made by a woman, for women — curated with grace & story.</p>
+    </header>
+
+    <!-- PDF & CANVA LINKS -->
+    <div class="link-stack">
+      <a href="MADE%20BY%20A%20WOMAN,%20FOR%20WOMEN.pdf" target="_blank" class="btn-link primary-pdf">
+        <span>📖 Brand Story & Lookbook (PDF)</span>
+        <span class="badge-lang">Read PDF</span>
+      </a>
+      <a href="https://canva.link/543g00zheskxg96" target="_blank" class="btn-link">
+        <span>✨ Official Catalogue & Links</span>
+        <span class="badge-lang">EN / JP</span>
+      </a>
+      <a href="https://canva.link/3pgy5zdh0trj1a5" target="_blank" class="btn-link">
+        <span>🌸 ブランドガイド・カタログ</span>
+        <span class="badge-lang">日本語</span>
+      </a>
+    </div>
+
+    <!-- MEMBER PASS & VERIFIKASI DISKON -->
+    <section class="card">
+      <h2 class="section-title">Member Pass & Privilege</h2>
+      <p class="section-sub">
+        Isi data diri untuk mengecek promo aktif hari ini (berlaku 24 jam & dapat digabung hingga <strong>22%</strong>).
+      </p>
+
+      <div class="form-group">
+        <label>Nama Lengkap</label>
+        <input type="text" id="buyerName" placeholder="Contoh: Kayzhia Azzahra" oninput="calculateTotal()">
+      </div>
+
+      <div class="form-group">
+        <label>Tanggal Lahir (Diskon 5% otomatis aktif tepat di hari ulang tahunmu selama 24 jam)</label>
+        <input type="date" id="buyerDob" onchange="calculateTotal()">
+      </div>
+
+      <label class="checkbox-row">
+        <input type="checkbox" id="isStudent" onchange="toggleStudentInput(); calculateTotal();">
+        <span>Saya Mahasiswa Aktif (<strong>+10%</strong> — wajib melampirkan foto KTM saat konfirmasi di WhatsApp)</span>
+      </label>
+
+      <div id="studentDetailBox" style="display:none; margin-bottom: 12px;">
+        <input type="text" id="studentInfo" placeholder="Nama Universitas & NIM (Contoh: Univ. Indonesia - 2306xxxx)" oninput="calculateTotal()">
+      </div>
+
+      <div class="form-group">
+        <label>Kode Voucher Spesial (<strong>+7%</strong>)</label>
+        <input type="text" id="voucherInput" placeholder="Masukkan kode voucher (Contoh: CHERIE7)" oninput="calculateTotal()">
+        <div id="voucherNote" class="note-box">
+          ⚠️ <strong>Info Penting:</strong> Kode voucher berhasil diterapkan! Sistem akan otomatis mencantumkan kode ini, pastikan juga tetap <em>noted</em> saat konfirmasi pesanan di WhatsApp.
+        </div>
+      </div>
+
+      <div class="promo-summary" id="promoSummary">
+        Tidak ada diskon tambahan aktif. Total diskon: <strong>0%</strong>.
+      </div>
+    </section>
+
+    <!-- KATALOG PRODUK -->
+    <section class="card">
+      <h2 class="section-title">Curated Collection</h2>
+      <p class="section-sub">Pilih produk favoritmu dan sesuaikan jumlahnya di keranjang belanja.</p>
+
+      <div class="product-grid" id="productList"></div>
+    </section>
+
+    <!-- KERANJANG & CHECKOUT WHATSAPP -->
+    <section class="card">
+      <h2 class="section-title">Your Shopping Bag</h2>
+      <div id="cartItems">
+        <p style="font-size:0.86rem; color:var(--text-muted);">Keranjang masih kosong. Yuk pilih produk di atas!</p>
+      </div>
+
+      <div style="margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--border-soft); font-size: 0.92rem;">
+        <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+          <span>Subtotal:</span>
+          <span id="subtotalText">Rp 0</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; margin-bottom:4px; color:var(--rose-deep);">
+          <span>Total Potongan Diskon (<span id="discountPercentText">0%</span>):</span>
+          <span id="discountAmountText">- Rp 0</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-weight:600; font-size:1.05rem; margin-top:8px;">
+          <span>Total Pembayaran:</span>
+          <span id="finalTotalText">Rp 0</span>
+        </div>
+      </div>
+
+      <p style="font-size:0.78rem; color:var(--text-muted); margin: 12px 0;">
+        *Catatan: Jika menggunakan diskon Ulang Tahun, Kartu Mahasiswa (KTM), atau Kode Voucher, harap lampirkan bukti & <em>noted</em> di chat WhatsApp saat konfirmasi.
+      </p>
+
+      <button class="btn" onclick="checkoutWhatsApp()">Checkout via WhatsApp</button>
+    </section>
+
+    <!-- OPEN DESIGNER SUBMISSION (SD - DEWASA) -->
+    <section class="card">
+      <h2 class="section-title">Open Designer Collaboration</h2>
+      <p class="section-sub">
+        Bellachérie. membuka kesempatan bagi siapa saja — mulai dari <strong>jenjang SD hingga dewasa</strong> — untuk mengirimkan desain & cerita karyamu.
+      </p>
+
+      <div class="rules-box">
+        <strong>📜 Syarat & Ketentuan Pengiriman Desain & CV (Wajib Dibaca):</strong>
+        <ul style="margin-top:8px;">
+          <li><strong>Gratis Tanpa Biaya:</strong> Pendaftaran dan pengiriman desain 100% gratis. Hati-hati terhadap pihak yang memungut biaya.</li>
+          <li><strong>Terbuka untuk Semua Usia:</strong> Mulai dari tingkat SD hingga umum. Peserta di bawah 17 tahun wajib mendapat izin orang tua/wali.</li>
+          <li><strong>Keaslian Karya:</strong> Desain wajib 100% karya orisinal sendiri, tidak menjiplak, dan tidak melanggar hak cipta pihak lain.</li>
+          <li><strong>Apresiasi Launching (Rp1.000.000):</strong> Setiap desain terpilih yang diproduksi pada edisi launching akan mencantumkan nama desainer secara resmi dan mendapatkan imbalan awal sebesar <strong>Rp1.000.000</strong>.</li>
+          <li><strong>Royalti Penjualan 2%:</strong> Apabila produk dari desain tersebut terjual mencapai <strong>200 pcs</strong>, desainer berhak mendapatkan royalti tambahan sebesar <strong>2%</strong> dari total pendapatan penjualan produk tersebut.</li>
+          <li><strong>Kelengkapan Data:</strong> Pengirim wajib menyertakan CV/profil singkat, alasan/filosofi di balik desain, serta kontak yang dapat dihubungi.</li>
+        </ul>
+      </div>
+
+      <label class="checkbox-row">
+        <input type="checkbox" id="agreeRules" onchange="toggleDesignerForm()">
+        <span>Saya telah membaca, memahami, dan menyetujui seluruh peraturan di atas.</span>
+      </label>
+
+      <div id="designerFormArea" style="display:none; margin-top:16px; border-top:1px solid var(--border-soft); padding-top:16px;">
+        <div class="form-group">
+          <label>Nama Lengkap Desainer</label>
+          <input type="text" id="desName" placeholder="Nama lengkapmu">
+        </div>
+        <div class="form-group">
+          <label>Usia & Jenjang Pendidikan / Pekerjaan</label>
+          <input type="text" id="desAge" placeholder="Contoh: 11 tahun (Kelas 5 SD) / 21 tahun (Mahasiswi)">
+        </div>
+        <div class="form-group">
+          <label>Link Portofolio / CV / File Desain (Google Drive / Canva)</label>
+          <input type="text" id="desLink" placeholder="Tempel link Google Drive / Canva desain & CV kamu">
+        </div>
+        <div class="form-group">
+          <label>Alasan & Cerita di Balik Desain Ini</label>
+          <textarea id="desStory" rows="3" placeholder="Ceritakan inspirasi dan makna desainmu..."></textarea>
+        </div>
+        <button class="btn" onclick="submitDesignerWA()">Kirim Pengajuan Desain & CV</button>
+      </div>
+    </section>
+
+    <!-- REVIEW & KOTAK MASUKAN -->
+    <section class="card" style="text-align:center;">
+      <h2 class="section-title">Community & Love Notes</h2>
+      <p class="section-sub">Baca pengalaman mereka bersama Bellachérie. atau tinggalkan saran untuk kami.</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+        <button class="btn btn-outline" onclick="openModal('reviewModal')">★ Lihat & Tulis Review</button>
+        <button class="btn btn-outline" onclick="openModal('feedbackModal')">💌 Kotak Masukan</button>
+      </div>
+    </section>
+
+    <!-- FOOTER & INSTAGRAM -->
+    <footer>
+      <p>© 2026 Bellachérie. — Made by a woman, for women.</p>
+      <a href="https://instagram.com/bellacheries" target="_blank" class="ig-btn">
+        Follow us on Instagram @bellacheries
+      </a>
+    </footer>
+  </div>
+
+  <!-- MODAL REVIEW -->
+  <div id="reviewModal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="close-modal" onclick="closeModal('reviewModal')">×</button>
+      <h3 class="serif" style="font-size:1.7rem; margin-bottom:6px;">Customer Reviews</h3>
+      <p style="font-size:0.84rem; color:var(--text-muted); margin-bottom:14px;">Ulasan tulus dari perempuan untuk perempuan.</p>
+
+      <div id="reviewsContainer"></div>
+
+      <div style="margin-top:16px; padding-top:14px; border-top:1px solid var(--border-soft);">
+        <h4 style="font-size:0.95rem; margin-bottom:8px;">Tulis Review Kamu</h4>
+        <div class="form-group">
+          <input type="text" id="revName" placeholder="Nama kamu">
+        </div>
+        <div class="form-group">
+          <select id="revRating">
+            <option value="★★★★★">★★★★★ (5/5 - Sangat Suka)</option>
+            <option value="★★★★☆">★★★★☆ (4/5 - Bagus)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <textarea id="revText" rows="2" placeholder="Bagikan pengalamanmu..."></textarea>
+        </div>
+        <button class="btn" onclick="addReview()">Kirim Review</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL KOTAK MASUKAN -->
+  <div id="feedbackModal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="close-modal" onclick="closeModal('feedbackModal')">×</button>
+      <h3 class="serif" style="font-size:1.7rem; margin-bottom:6px;">Kotak Masukan & Saran</h3>
+      <p style="font-size:0.84rem; color:var(--text-muted); margin-bottom:14px;">Punya ide produk atau saran untuk Bellachérie.? Kami senang mendengarnya.</p>
+      <div class="form-group">
+        <input type="text" id="fbName" placeholder="Nama kamu (boleh anonim)">
+      </div>
+      <div class="form-group">
+        <textarea id="fbMessage" rows="3" placeholder="Tulis masukanmu di sini..."></textarea>
+      </div>
+      <button class="btn" onclick="sendFeedback()">Kirim Masukan</button>
+    </div>
+  </div>
+
+  <script>
+    // ================= PENGATURAN TOKO (MUDAH DIUBAH) =================
+    const WA_NUMBER = "818029925628"; // Nomor WhatsApp tujuan
+    const VALID_VOUCHER_CODE = "CHERIE7"; // Kode voucher diskon 7%
+
+    // Daftar Produk (Bisa kamu tambah atau ubah nama & harganya kapan saja)
+    const PRODUCTS = [
+      { id: 1, name: "Bellachérie. Signature Scarf", price: 185000, tag: "First Edition" },
+      { id: 2, name: "Chérie Everyday Tote Bag", price: 220000, tag: "Limited" },
+      { id: 3, name: "Rosé Silk Hair Scrunchie Set", price: 89000, tag: "Bestseller" },
+      { id: 4, name: "Women Empowerment Journal", price: 145000, tag: "New" }
+    ];
+
+    // Daftar Hari Libur Nasional & Perayaan (Format: "MM-DD" untuk tanggal tetap setiap tahun)
+    const FIXED_HOLIDAYS = {
+      "01-01": "Tahun Baru",
+      "04-21": "Hari Kartini",
+      "08-17": "Hari Kemerdekaan 17 Agustus",
+      "11-10": "Hari Pahlawan",
+      "12-25": "Hari Raya Natal"
+    };
+
+    // Tanggal Hari Raya Lunar/Hijriah Tahun 2026 (Format: "YYYY-MM-DD")
+    const SPECIAL_DATES_2026 = {
+      "2026-02-17": "Tahun Baru Imlek (CNY)",
+      "2026-03-20": "Hari Raya Idul Fitri / Ramadhan",
+      "2026-03-21": "Hari Raya Idul Fitri"
+    };
+    // =================================================================
+
+    let cart = {};
+    let holidayDiscount = 0;
+    let holidayName = "";
+
+    // Cek Kalender Otomatis (Berlaku tepat 24 jam sesuai tanggal hari ini)
+    function checkCalendarHoliday() {
+      const now = new Date();
+      const yyyy = now.getFullYear();
+      const mm = String(now.getMonth() + 1).padStart(2, '0');
+      const dd = String(now.getDate()).padStart(2, '0');
+      const fullDate = `${yyyy}-${mm}-${dd}`;
+      const monthDay = `${mm}-${dd}`;
+
+      if (SPECIAL_DATES_2026[fullDate]) {
+        holidayDiscount = 5;
+        holidayName = SPECIAL_DATES_2026[fullDate];
+      } else if (FIXED_HOLIDAYS[monthDay]) {
+        holidayDiscount = 5;
+        holidayName = FIXED_HOLIDAYS[monthDay];
+      }
+
+      const banner = document.getElementById("holidayBanner");
+      if (holidayDiscount > 0) {
+        banner.innerHTML = `✨ Spesial <strong>${holidayName}</strong>! Diskon <strong>5%</strong> aktif otomatis selama 24 jam hari ini.`;
+      } else {
+        banner.innerHTML = `🌷 Selamat datang di <strong>Bellachérie.</strong> — Cek promo ulang tahun & kartu mahasiswa di bawah!`;
+      }
+    }
+
+    function formatRupiah(num) {
+      return "Rp " + num.toLocaleString("id-ID");
+    }
+
+    function renderProducts() {
+      const container = document.getElementById("productList");
+      container.innerHTML = PRODUCTS.map(p => `
+        <div class="product-item">
+          <div>
+            <div class="product-placeholder">${p.tag}<br>Bellachérie.</div>
+            <div class="product-name">${p.name}</div>
+            <div class="product-price">${formatRupiah(p.price)}</div>
+          </div>
+          <button class="btn" onclick="addToCart(${p.id})">+ Tambah</button>
+        </div>
+      `).join("");
+    }
+
+    function addToCart(id) {
+      cart[id] = (cart[id] || 0) + 1;
+      renderCart();
+    }
+
+    function changeQty(id, delta) {
+      if (!cart[id]) return;
+      cart[id] += delta;
+      if (cart[id] <= 0) delete cart[id];
+      renderCart();
+    }
+
+    function toggleStudentInput() {
+      const checked = document.getElementById("isStudent").checked;
+      document.getElementById("studentDetailBox").style.display = checked ? "block" : "none";
+    }
+
+    function getActiveDiscounts() {
+      let totalPercent = 0;
+      let tags = [];
+
+      // 1. Diskon Hari Raya (5%)
+      if (holidayDiscount > 0) {
+        totalPercent += 5;
+        tags.push(`${holidayName} (+5%)`);
+      }
+
+      // 2. Diskon Ulang Tahun Pembeli (5% - 24 jam jika tanggal & bulan cocok hari ini)
+      const dobVal = document.getElementById("buyerDob").value;
+      if (dobVal) {
+        const now = new Date();
+        const todayMD = `${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+        const dobMD = dobVal.slice(5, 10);
+        if (todayMD === dobMD) {
+          totalPercent += 5;
+          tags.push("Birthday Privilege (+5%)");
+        }
+      }
+
+      // 3. Diskon Mahasiswa (+10%)
+      const isStudent = document.getElementById("isStudent").checked;
+      if (isStudent) {
+        totalPercent += 10;
+        tags.push("Kartu Mahasiswa (+10%)");
+      }
+
+      // 4. Diskon Kode Voucher (+7%)
+      const codeInput = document.getElementById("voucherInput").value.trim().toUpperCase();
+      const voucherNote = document.getElementById("voucherNote");
+      if (codeInput === VALID_VOUCHER_CODE) {
+        totalPercent += 7;
+        tags.push(`Voucher ${VALID_VOUCHER_CODE} (+7%)`);
+        voucherNote.style.display = "block";
+      } else {
+        voucherNote.style.display = "none";
+      }
+
+      return { totalPercent, tags };
+    }
+
+    function calculateTotal() {
+      const { totalPercent, tags } = getActiveDiscounts();
+      const summaryEl = document.getElementById("promoSummary");
+
+      if (tags.length > 0) {
+        summaryEl.innerHTML = `Promo aktif hari ini: <br>` +
+          tags.map(t => `<span class="promo-tag">${t}</span>`).join("") +
+          `<div style="margin-top:6px;">Total Potongan Harga: <strong>${totalPercent}%</strong></div>`;
+      } else {
+        summaryEl.innerHTML = `Belum ada promo aktif. Isi tanggal lahir (jika hari ini ulang tahun), centang mahasiswa, atau masukkan kode voucher.`;
+      }
+
+      let subtotal = 0;
+      for (let id in cart) {
+        const prod = PRODUCTS.find(p => p.id == id);
+        if (prod) subtotal += prod.price * cart[id];
+      }
+
+      const discountAmount = Math.round(subtotal * (totalPercent / 100));
+      const finalTotal = subtotal - discountAmount;
+
+      document.getElementById("subtotalText").innerText = formatRupiah(subtotal);
+      document.getElementById("discountPercentText").innerText = totalPercent + "%";
+      document.getElementById("discountAmountText").innerText = "- " + formatRupiah(discountAmount);
+      document.getElementById("finalTotalText").innerText = formatRupiah(finalTotal);
+    }
+
+    function renderCart() {
+      const container = document.getElementById("cartItems");
+      const ids = Object.keys(cart);
+
+      if (ids.length === 0) {
+        container.innerHTML = `<p style="font-size:0.86rem; color:var(--text-muted);">Keranjang masih kosong. Yuk pilih produk di atas!</p>`;
+      } else {
+        container.innerHTML = ids.map(id => {
+          const prod = PRODUCTS.find(p => p.id == id);
+          return `
+            <div class="cart-row">
+              <div>
+                <strong>${prod.name}</strong><br>
+                <span style="color:var(--text-muted); font-size:0.8rem;">${formatRupiah(prod.price)} x ${cart[id]}</span>
+              </div>
+              <div class="qty-controls">
+                <button onclick="changeQty(${id}, -1)">-</button>
+                <span style="margin:0 8px;">${cart[id]}</span>
+                <button onclick="changeQty(${id}, 1)">+</button>
+              </div>
+            </div>
+          `;
+        }).join("");
+      }
+      calculateTotal();
+    }
+
+    function checkoutWhatsApp() {
+      const ids = Object.keys(cart);
+      if (ids.length === 0) {
+        alert("Keranjang belanjamu masih kosong. Silakan pilih produk terlebih dahulu.");
+        return;
+      }
+
+      const name = document.getElementById("buyerName").value.trim() || "Pelanggan Bellachérie.";
+      const dob = document.getElementById("buyerDob").value || "-";
+      const isStudent = document.getElementById("isStudent").checked;
+      const studentInfo = document.getElementById("studentInfo").value.trim() || "-";
+      const codeInput = document.getElementById("voucherInput").value.trim().toUpperCase();
+      const { totalPercent, tags } = getActiveDiscounts();
+
+      let subtotal = 0;
+      let itemLines = "";
+      ids.forEach(id => {
+        const prod = PRODUCTS.find(p => p.id == id);
+        const lineTotal = prod.price * cart[id];
+        subtotal += lineTotal;
+        itemLines += `• ${prod.name} (${cart[id]}x) = ${formatRupiah(lineTotal)}\n`;
+      });
+
+      const discountAmount = Math.round(subtotal * (totalPercent / 100));
+      const finalTotal = subtotal - discountAmount;
+
+      let message = `Halo Bellachérie.! Saya ingin memesan:\n\n`;
+      message += `*Data Pembeli:*\n`;
+      message += `Nama: ${name}\n`;
+      message += `Tanggal Lahir: ${dob}\n`;
+      if (isStudent) {
+        message += `Status: Mahasiswa (${studentInfo}) — *Akan saya lampirkan foto KTM*\n`;
+      }
+      if (codeInput === VALID_VOUCHER_CODE) {
+        message += `Kode Voucher (NOTED): ${codeInput}\n`;
+      }
+      message += `\n*Rincian Pesanan:*\n${itemLines}\n`;
+      message += `Subtotal: ${formatRupiah(subtotal)}\n`;
+      message += `Promo Aktif (${totalPercent}%): ${tags.length > 0 ? tags.join(", ") : "Tidak ada"}\n`;
+      message += `Potongan Harga: -${formatRupiah(discountAmount)}\n`;
+      message += `*Total Akhir: ${formatRupiah(finalTotal)}*\n\n`;
+      message += `Mohon info pembayaran selanjutnya ya. Terima kasih! 🌸`;
+
+      window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`, "_blank");
+    }
+
+    // Toggle Form Desainer setelah centang aturan
+    function toggleDesignerForm() {
+      const agreed = document.getElementById("agreeRules").checked;
+      document.getElementById("designerFormArea").style.display = agreed ? "block" : "none";
+    }
+
+    function submitDesignerWA() {
+      const name = document.getElementById("desName").value.trim();
+      const age = document.getElementById("desAge").value.trim();
+      const link = document.getElementById("desLink").value.trim();
+      const story = document.getElementById("desStory").value.trim();
+
+      if (!name || !age || !link || !story) {
+        alert("Mohon lengkapi seluruh data desainer, link file desain/CV, dan cerita karyamu.");
+        return;
+      }
+
+      let msg = `Halo Bellachérie.! Saya ingin mengirimkan pengajuan desain & CV (telah menyetujui Syarat & Ketentuan):\n\n`;
+      msg += `Nama Desainer: ${name}\n`;
+      msg += `Usia / Jenjang: ${age}\n`;
+      msg += `Link Desain & CV: ${link}\n`;
+      msg += `Filosofi / Alasan Desain:\n${story}\n\n`;
+      msg += `Terima kasih atas kesempatannya! ✨`;
+
+      window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, "_blank");
+    }
+
+    // Modal & Review System
+    const defaultReviews = [
+      { name: "Alya N.", rating: "★★★★★", text: "Suka banget sama konsep brand-nya yang hangat dan memberdayakan perempuan. Packaging-nya super cantik!" },
+      { name: "Nadia K.", rating: "★★★★★", text: "Senang banget pas ulang tahun dapat diskon otomatis dan proses checkout ke WA-nya rapi banget." }
+    ];
+
+    function loadReviews() {
+      const saved = JSON.parse(localStorage.getItem("bellacherie_reviews") || "null") || defaultReviews;
+      const container = document.getElementById("reviewsContainer");
+      container.innerHTML = saved.map(r => `
+        <div class="review-card">
+          <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+            <strong>${r.name}</strong>
+            <span style="color:var(--rose-deep);">${r.rating}</span>
+          </div>
+          <p>${r.text}</p>
+        </div>
+      `).join("");
+    }
+
+    function addReview() {
+      const name = document.getElementById("revName").value.trim();
+      const rating = document.getElementById("revRating").value;
+      const text = document.getElementById("revText").value.trim();
+      if (!name || !text) {
+        alert("Isi nama dan ulasanmu terlebih dahulu ya.");
+        return;
+      }
+      const saved = JSON.parse(localStorage.getItem("bellacherie_reviews") || "null") || defaultReviews;
+      saved.unshift({ name, rating, text });
+      localStorage.setItem("bellacherie_reviews", JSON.stringify(saved));
+      document.getElementById("revName").value = "";
+      document.getElementById("revText").value = "";
+      loadReviews();
+    }
+
+    function sendFeedback() {
+      const name = document.getElementById("fbName").value.trim() || "Anonim";
+      const msg = document.getElementById("fbMessage").value.trim();
+      if (!msg) {
+        alert("Tulis masukanmu terlebih dahulu ya.");
+        return;
+      }
+      const waText = `Halo Bellachérie.! Ada masukan/saran baru dari website:\n\nDari: ${name}\nPesan: ${msg}`;
+      window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waText)}`, "_blank");
+      closeModal("feedbackModal");
+    }
+
+    function openModal(id) { document.getElementById(id).style.display = "flex"; }
+    function closeModal(id) { document.getElementById(id).style.display = "none"; }
+
+    // Jalankan saat halaman dibuka
+    checkCalendarHoliday();
+    renderProducts();
+    loadReviews();
+  </script>
+</body>
+</html>
