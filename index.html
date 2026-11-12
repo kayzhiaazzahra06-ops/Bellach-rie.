@@ -755,4 +755,351 @@
             <li><strong>応募費用無料：</strong> デザインおよび履歴書（CV）の提出は完全に無料です。</li>
             <li><strong>全年齢対象：</strong> 小学生から一般の方まで応募可能です（17歳未満の方は保護者の同意が必要です）。</li>
             <li><strong>作品のオリジナリティ：</strong> 未発表のオリジナル作品であり、第三者の著作権を侵害していないものに限ります。</li>
-            <li>
+            <li><strong>ローンチ謝礼（1,000,000ルピア）：</strong> 採用され製品化されたデザインにはデザイナー名が刻印され、初期謝礼として<strong>1,000,000ルピア</strong>をお支払いいたします。</li>
+            <li><strong>販売ロイヤリティ（2%）：</strong> 該当商品の販売数が<strong>200点</strong>に達した場合、総売上収益の<strong>2%</strong>を追加ロイヤリティとして還元いたします。</li>
+            <li><strong>提出書類：</strong> 簡単なプロフィール（CV）、デザインの背景・想い、連絡先を必ずご記入ください。</li>
+          </ul>
+        `,
+        agree: "上記の応募規約をすべて読み、内容に同意します。",
+        lblName: "デザイナー氏名",
+        phName: "お名前（フルネーム）",
+        lblAge: "年齢・学年またはご職業",
+        phAge: "例：12歳（小学生） / 20歳（大学生）",
+        lblLink: "デザインデータ・CVのリンク（Google Drive / PDF）",
+        phLink: "スケッチとCVを保存したGoogleドライブのURLを貼り付け",
+        lblStory: "デザインのコンセプト・背景にある想い",
+        phStory: "作品に込めたストーリーやインスピレーションをご記入ください...",
+        btn: "WhatsAppでデザインとCVを送信"
+      }
+    };
+
+    function setOpenCallLang(lang, btnEl) {
+      document.querySelectorAll(".lang-tab").forEach(b => b.classList.remove("active"));
+      if (btnEl) btnEl.classList.add("active");
+
+      const c = OPEN_CALL_CONTENT[lang];
+      document.getElementById("ocTitle").innerText = c.title;
+      document.getElementById("ocSubtitle").innerHTML = c.subtitle;
+      document.getElementById("ocRulesBox").innerHTML = c.rules;
+      document.getElementById("ocAgreeLabel").innerText = c.agree;
+      document.getElementById("ocLblName").innerText = c.lblName;
+      document.getElementById("desName").placeholder = c.phName;
+      document.getElementById("ocLblAge").innerText = c.lblAge;
+      document.getElementById("desAge").placeholder = c.phAge;
+      document.getElementById("ocLblLink").innerText = c.lblLink;
+      document.getElementById("desLink").placeholder = c.phLink;
+      document.getElementById("ocLblStory").innerText = c.lblStory;
+      document.getElementById("desStory").placeholder = c.phStory;
+      document.getElementById("ocSubmitBtn").innerText = c.btn;
+    }
+
+    // Kalender Hari Raya & Perayaan Nasional (Otomatis 24 Jam)
+    const FIXED_HOLIDAYS = {
+      "01-01": "New Year's Day",
+      "04-21": "Hari Kartini",
+      "08-17": "Independence Day (17 Agustus)",
+      "11-10": "Hari Pahlawan",
+      "12-25": "Christmas Day"
+    };
+
+    const SPECIAL_DATES_2026 = {
+      "2026-02-17": "Chinese New Year",
+      "2026-03-20": "Eid al-Fitr / Ramadhan",
+      "2026-03-21": "Eid al-Fitr"
+    };
+
+    let cart = {};
+    let holidayDiscount = 0;
+    let holidayName = "";
+
+    function checkCalendarHoliday() {
+      const now = new Date();
+      const yyyy = now.getFullYear();
+      const mm = String(now.getMonth() + 1).padStart(2, '0');
+      const dd = String(now.getDate()).padStart(2, '0');
+      const fullDate = `${yyyy}-${mm}-${dd}`;
+      const monthDay = `${mm}-${dd}`;
+
+      if (SPECIAL_DATES_2026[fullDate]) {
+        holidayDiscount = 5;
+        holidayName = SPECIAL_DATES_2026[fullDate];
+      } else if (FIXED_HOLIDAYS[monthDay]) {
+        holidayDiscount = 5;
+        holidayName = FIXED_HOLIDAYS[monthDay];
+      }
+
+      const banner = document.getElementById("holidayBanner");
+      if (holidayDiscount > 0) {
+        banner.innerHTML = `${holidayName} Privilege — 5% Off Automatically Applied for 24 Hours`;
+      } else {
+        banner.innerHTML = `Bellachérie. Atelier — Private Member & Student Privileges Available`;
+      }
+    }
+
+    function formatRupiah(num) {
+      return "Rp " + num.toLocaleString("id-ID");
+    }
+
+    function renderProducts() {
+      const container = document.getElementById("productList");
+      container.innerHTML = PRODUCTS.map(p => `
+        <div class="product-item">
+          <div>
+            <div class="product-placeholder">
+              <span>${p.tag}</span>
+              Bellachérie.
+            </div>
+            <div class="product-name">${p.name}</div>
+            <div class="product-price">${formatRupiah(p.price)}</div>
+          </div>
+          <button class="btn" onclick="addToCart(${p.id})">Add to Bag</button>
+        </div>
+      `).join("");
+    }
+
+    function addToCart(id) {
+      cart[id] = (cart[id] || 0) + 1;
+      renderCart();
+    }
+
+    function changeQty(id, delta) {
+      if (!cart[id]) return;
+      cart[id] += delta;
+      if (cart[id] <= 0) delete cart[id];
+      renderCart();
+    }
+
+    function toggleStudentInput() {
+      const checked = document.getElementById("isStudent").checked;
+      document.getElementById("studentDetailBox").style.display = checked ? "block" : "none";
+    }
+
+    function getActiveDiscounts() {
+      let autoPercent = 0;
+      let tags = [];
+
+      if (holidayDiscount > 0) {
+        autoPercent += 5;
+        tags.push(`${holidayName} (+5%)`);
+      }
+
+      const dobVal = document.getElementById("buyerDob").value;
+      if (dobVal) {
+        const now = new Date();
+        const todayMD = `${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+        const dobMD = dobVal.slice(5, 10);
+        if (todayMD === dobMD) {
+          autoPercent += 5;
+          tags.push("Birthday Privilege (+5%)");
+        }
+      }
+
+      const isStudent = document.getElementById("isStudent").checked;
+      if (isStudent) {
+        autoPercent += 10;
+        tags.push("Student Privilege (+10%)");
+      }
+
+      const codeInput = document.getElementById("voucherInput").value.trim().toUpperCase();
+      const voucherNote = document.getElementById("voucherNote");
+      if (codeInput.length > 0) {
+        voucherNote.style.display = "block";
+      } else {
+        voucherNote.style.display = "none";
+      }
+
+      return { autoPercent, tags, codeInput };
+    }
+
+    function calculateTotal() {
+      const { autoPercent, tags, codeInput } = getActiveDiscounts();
+      const summaryEl = document.getElementById("promoSummary");
+
+      let html = "";
+      if (tags.length > 0) {
+        html += `Potongan otomatis aktif:<br>` + tags.map(t => `<span class="promo-tag">${t}</span>`).join("");
+        html += `<div style="margin-top:6px;">Total Potongan Otomatis: <strong>${autoPercent}%</strong></div>`;
+      } else {
+        html += `Belum ada potongan otomatis yang aktif hari ini.`;
+      }
+
+      if (codeInput.length > 0) {
+        html += `<div style="margin-top:6px; color:var(--maroon); font-weight:600;">Kode Voucher "${codeInput}" tercatat — menunggu verifikasi admin di WhatsApp (+7%).</div>`;
+      }
+
+      summaryEl.innerHTML = html;
+
+      let subtotal = 0;
+      for (let id in cart) {
+        const prod = PRODUCTS.find(p => p.id == id);
+        if (prod) subtotal += prod.price * cart[id];
+      }
+
+      const discountAmount = Math.round(subtotal * (autoPercent / 100));
+      const finalTotal = subtotal - discountAmount;
+
+      document.getElementById("subtotalText").innerText = formatRupiah(subtotal);
+      document.getElementById("discountPercentText").innerText = autoPercent + "%";
+      document.getElementById("discountAmountText").innerText = "- " + formatRupiah(discountAmount);
+      document.getElementById("finalTotalText").innerText = formatRupiah(finalTotal);
+    }
+
+    function renderCart() {
+      const container = document.getElementById("cartItems");
+      const ids = Object.keys(cart);
+
+      if (ids.length === 0) {
+        container.innerHTML = `<p style="font-size:0.85rem; color:var(--text-muted);">Tas belanja Anda masih kosong.</p>`;
+      } else {
+        container.innerHTML = ids.map(id => {
+          const prod = PRODUCTS.find(p => p.id == id);
+          return `
+            <div class="cart-row">
+              <div>
+                <strong>${prod.name}</strong><br>
+                <span style="color:var(--text-muted); font-size:0.8rem;">${formatRupiah(prod.price)} x ${cart[id]}</span>
+              </div>
+              <div class="qty-controls">
+                <button onclick="changeQty(${id}, -1)">-</button>
+                <span style="margin:0 8px;">${cart[id]}</span>
+                <button onclick="changeQty(${id}, 1)">+</button>
+              </div>
+            </div>
+          `;
+        }).join("");
+      }
+      calculateTotal();
+    }
+
+    function checkoutWhatsApp() {
+      const ids = Object.keys(cart);
+      if (ids.length === 0) {
+        alert("Tas belanja Anda masih kosong.");
+        return;
+      }
+
+      const name = document.getElementById("buyerName").value.trim() || "Pelanggan Bellachérie.";
+      const dob = document.getElementById("buyerDob").value || "-";
+      const isStudent = document.getElementById("isStudent").checked;
+      const studentInfo = document.getElementById("studentInfo").value.trim() || "-";
+      const { autoPercent, tags, codeInput } = getActiveDiscounts();
+
+      let subtotal = 0;
+      let itemLines = "";
+      ids.forEach(id => {
+        const prod = PRODUCTS.find(p => p.id == id);
+        const lineTotal = prod.price * cart[id];
+        subtotal += lineTotal;
+        itemLines += `- ${prod.name} (${cart[id]}x) = ${formatRupiah(lineTotal)}\n`;
+      });
+
+      const discountAmount = Math.round(subtotal * (autoPercent / 100));
+      const finalTotal = subtotal - discountAmount;
+
+      let message = `Halo Bellachérie., saya ingin melakukan pemesanan:\n\n`;
+      message += `*Data Pemesan:*\n`;
+      message += `Nama: ${name}\n`;
+      message += `Tanggal Lahir: ${dob}\n`;
+      if (isStudent) {
+        message += `Status: Mahasiswa (${studentInfo}) — siap melampirkan foto KTM\n`;
+      }
+      if (codeInput.length > 0) {
+        message += `Kode Voucher (Mohon Verifikasi +7%): ${codeInput}\n`;
+      }
+      message += `\n*Rincian Pesanan:*\n${itemLines}\n`;
+      message += `Subtotal: ${formatRupiah(subtotal)}\n`;
+      message += `Potongan Otomatis (${autoPercent}%): ${tags.length > 0 ? tags.join(", ") : "Tidak ada"}\n`;
+      message += `Nominal Potongan Otomatis: -${formatRupiah(discountAmount)}\n`;
+      message += `*Estimasi Sementara: ${formatRupiah(finalTotal)}*\n`;
+      if (codeInput.length > 0) {
+        message += `(Menunggu konfirmasi validasi kode voucher "${codeInput}" oleh admin untuk tambahan potongan 7%)\n`;
+      }
+      message += `\nMohon konfirmasi ketersediaan dan total akhir pembayaran. Terima kasih.`;
+
+      window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`, "_blank");
+    }
+
+    function toggleDesignerForm() {
+      const agreed = document.getElementById("agreeRules").checked;
+      document.getElementById("designerFormArea").style.display = agreed ? "block" : "none";
+    }
+
+    function submitDesignerWA() {
+      const name = document.getElementById("desName").value.trim();
+      const age = document.getElementById("desAge").value.trim();
+      const link = document.getElementById("desLink").value.trim();
+      const story = document.getElementById("desStory").value.trim();
+
+      if (!name || !age || !link || !story) {
+        alert("Mohon lengkapi seluruh data desainer, tautan file, dan filosofi karya.");
+        return;
+      }
+
+      let msg = `Halo Bellachérie., saya ingin mengajukan karya desain & CV (telah menyetujui Syarat & Ketentuan):\n\n`;
+      msg += `Nama Desainer: ${name}\n`;
+      msg += `Usia / Jenjang: ${age}\n`;
+      msg += `Tautan Desain & CV: ${link}\n`;
+      msg += `Filosofi & Alasan Desain:\n${story}\n\n`;
+      msg += `Terima kasih.`;
+
+      window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, "_blank");
+    }
+
+    const defaultReviews = [
+      { name: "Clarissa W.", rating: "5 / 5", text: "Konsepnya sangat anggun dan berkelas. Senang sekali melihat brand yang benar-benar memberi ruang bagi kreator perempuan." },
+      { name: "Nadia K.", rating: "5 / 5", text: "Pelayanannya sangat personal dan rapi. Potongan ulang tahunnya langsung terhitung otomatis." }
+    ];
+
+    function loadReviews() {
+      const saved = JSON.parse(localStorage.getItem("bellacherie_reviews") || "null") || defaultReviews;
+      const container = document.getElementById("reviewsContainer");
+      container.innerHTML = saved.map(r => `
+        <div class="review-card">
+          <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+            <strong>${r.name}</strong>
+            <span style="color:var(--maroon); font-weight:600;">${r.rating}</span>
+          </div>
+          <p>${r.text}</p>
+        </div>
+      `).join("");
+    }
+
+    function addReview() {
+      const name = document.getElementById("revName").value.trim();
+      const rating = document.getElementById("revRating").value;
+      const text = document.getElementById("revText").value.trim();
+      if (!name || !text) {
+        alert("Mohon isi nama dan ulasan Anda.");
+        return;
+      }
+      const saved = JSON.parse(localStorage.getItem("bellacherie_reviews") || "null") || defaultReviews;
+      saved.unshift({ name, rating, text });
+      localStorage.setItem("bellacherie_reviews", JSON.stringify(saved));
+      document.getElementById("revName").value = "";
+      document.getElementById("revText").value = "";
+      loadReviews();
+    }
+
+    function sendFeedback() {
+      const name = document.getElementById("fbName").value.trim() || "Anonim";
+      const msg = document.getElementById("fbMessage").value.trim();
+      if (!msg) {
+        alert("Mohon tuliskan saran atau masukan Anda.");
+        return;
+      }
+      const waText = `Halo Bellachérie., terdapat masukan baru dari website:\n\nDari: ${name}\nPesan: ${msg}`;
+      window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waText)}`, "_blank");
+      closeModal("feedbackModal");
+    }
+
+    function openModal(id) { document.getElementById(id).style.display = "flex"; }
+    function closeModal(id) { document.getElementById(id).style.display = "none"; }
+
+    // Inisialisasi halaman
+    checkCalendarHoliday();
+    renderProducts();
+    loadReviews();
+    setOpenCallLang('en', document.querySelector('.lang-tab'));
+  </script>
+</body>
+</html>
