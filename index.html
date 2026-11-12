@@ -6,26 +6,33 @@
   <title>Bellachérie. — Made by a Woman, for Women</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-cream: #FDF9F7;
-      --bg-card: #FFFFFF;
-      --blush-soft: #F7E8E6;
-      --rose-muted: #D8A39D;
-      --rose-deep: #A6635C;
-      --text-dark: #3A2D2C;
-      --text-muted: #7C6A68;
-      --border-soft: #EEDAD7;
+      --bg-ivory: #FAF6F0;
+      --bg-card: #FFFDF9;
+      --burgundy: #5C1A26;
+      --burgundy-dark: #3E0F18;
+      --gold-champagne: #B89768;
+      --gold-light: #E8DEC8;
+      --text-ink: #24191B;
+      --text-muted: #6E5D60;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* Background Upper East Side / Tweed Pattern (Tanpa Wajah) */
     body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: var(--bg-cream);
-      color: var(--text-dark);
-      line-height: 1.6;
-      padding-bottom: 90px;
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--bg-ivory);
+      background-image:
+        radial-gradient(rgba(184, 151, 104, 0.14) 1px, transparent 1px),
+        radial-gradient(rgba(92, 26, 38, 0.06) 1px, var(--bg-ivory) 1px);
+      background-size: 24px 24px;
+      background-position: 0 0, 12px 12px;
+      color: var(--text-ink);
+      line-height: 1.65;
+      padding-bottom: 80px;
     }
 
     h1, h2, h3, .serif {
@@ -33,252 +40,318 @@
       font-weight: 600;
     }
 
-    .container {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 24px 18px;
-    }
-
-    /* Banner Kalender Otomatis */
-    .holiday-banner {
-      background: linear-gradient(135deg, var(--rose-deep), #8C4E48);
-      color: #fff;
+    /* Top Editorial Ribbon */
+    .top-ribbon {
+      background-color: var(--burgundy);
+      color: #F7EFE2;
       text-align: center;
       padding: 10px 16px;
-      font-size: 0.85rem;
-      letter-spacing: 0.3px;
+      font-size: 0.78rem;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--gold-champagne);
     }
 
-    /* Header */
+    .container {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 28px 18px;
+    }
+
+    /* Header Monogram */
     header {
       text-align: center;
-      padding: 32px 12px 24px;
+      padding: 36px 20px 30px;
+      background: var(--bg-card);
+      border: 1px solid var(--gold-champagne);
+      outline: 4px solid var(--bg-card);
+      box-shadow: 0 10px 30px rgba(62, 15, 24, 0.06);
+      margin-bottom: 28px;
+      position: relative;
+    }
+    .monogram {
+      display: inline-block;
+      width: 44px;
+      height: 44px;
+      line-height: 42px;
+      border: 1px solid var(--gold-champagne);
+      border-radius: 50%;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-style: italic;
+      color: var(--burgundy);
+      margin-bottom: 12px;
     }
     .brand-title {
-      font-size: 2.8rem;
-      letter-spacing: 1px;
-      color: var(--text-dark);
-      margin-bottom: 6px;
+      font-size: 3rem;
+      letter-spacing: 2px;
+      color: var(--burgundy);
+      line-height: 1.1;
+      margin-bottom: 8px;
     }
     .brand-tagline {
-      font-style: italic;
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem;
-      color: var(--rose-deep);
-      margin-bottom: 22px;
+      font-style: italic;
+      font-size: 1.25rem;
+      color: var(--text-muted);
+    }
+    .divider-ornament {
+      margin: 16px auto 0;
+      width: 80px;
+      height: 1px;
+      background: var(--gold-champagne);
     }
 
-    /* Link Buttons (PDF & Canva) */
+    /* Editorial PDF Links (Tanpa Canva & Tanpa Emoji) */
     .link-stack {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      margin-bottom: 32px;
+      gap: 14px;
+      margin-bottom: 28px;
     }
-    .btn-link {
+    .btn-editorial {
       display: flex;
       align-items: center;
       justify-content: space-between;
       background: var(--bg-card);
-      border: 1px solid var(--border-soft);
-      padding: 15px 20px;
-      border-radius: 16px;
+      border: 1px solid var(--gold-champagne);
+      padding: 18px 22px;
       text-decoration: none;
-      color: var(--text-dark);
-      font-weight: 500;
-      font-size: 0.95rem;
-      box-shadow: 0 4px 15px rgba(166, 99, 92, 0.05);
+      color: var(--text-ink);
       transition: all 0.25s ease;
+      box-shadow: 0 4px 15px rgba(36, 25, 27, 0.03);
     }
-    .btn-link:hover {
+    .btn-editorial:hover {
+      background: var(--burgundy);
+      color: #FAF6F0;
       transform: translateY(-2px);
-      border-color: var(--rose-muted);
-      background: var(--blush-soft);
     }
-    .btn-link.primary-pdf {
-      background: var(--blush-soft);
-      border-color: var(--rose-muted);
+    .btn-editorial:hover .jp-sub,
+    .btn-editorial:hover .link-tag {
+      color: var(--gold-light);
+      border-color: var(--gold-light);
     }
-    .badge-lang {
-      font-size: 0.72rem;
-      background: var(--rose-deep);
-      color: #fff;
-      padding: 3px 10px;
-      border-radius: 20px;
+    .link-title-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+    .link-main {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+    }
+    .jp-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+    .link-tag {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      border: 1px solid var(--gold-champagne);
+      padding: 4px 10px;
+      color: var(--burgundy);
     }
 
     /* Section Card */
     .card {
       background: var(--bg-card);
-      border: 1px solid var(--border-soft);
-      border-radius: 20px;
-      padding: 22px;
-      margin-bottom: 24px;
-      box-shadow: 0 6px 20px rgba(166, 99, 92, 0.04);
+      border: 1px solid var(--gold-light);
+      padding: 26px 24px;
+      margin-bottom: 26px;
+      box-shadow: 0 8px 25px rgba(36, 25, 27, 0.04);
+    }
+    .section-roman {
+      font-size: 0.72rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold-champagne);
+      display: block;
+      margin-bottom: 2px;
     }
     .section-title {
-      font-size: 1.75rem;
+      font-size: 1.9rem;
+      color: var(--burgundy);
       margin-bottom: 6px;
-      color: var(--text-dark);
     }
     .section-sub {
-      font-size: 0.86rem;
+      font-size: 0.84rem;
       color: var(--text-muted);
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
 
-    /* Form Inputs */
-    .form-group { margin-bottom: 14px; }
+    /* Form Controls */
+    .form-group { margin-bottom: 16px; }
     label {
       display: block;
-      font-size: 0.83rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
       font-weight: 500;
-      margin-bottom: 5px;
-      color: var(--text-dark);
+      margin-bottom: 6px;
+      color: var(--text-ink);
     }
-    input[type="text"], input[type="date"], input[type="number"], select, textarea {
+    input[type="text"], input[type="date"], select, textarea {
       width: 100%;
       padding: 11px 14px;
-      border: 1px solid var(--border-soft);
-      border-radius: 12px;
-      font-family: inherit;
-      font-size: 0.9rem;
-      background: var(--bg-cream);
-      color: var(--text-dark);
+      border: 1px solid var(--gold-light);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.88rem;
+      background: var(--bg-ivory);
+      color: var(--text-ink);
       outline: none;
     }
     input:focus, textarea:focus, select:focus {
-      border-color: var(--rose-deep);
+      border-color: var(--burgundy);
       background: #fff;
     }
     .checkbox-row {
       display: flex;
       align-items: flex-start;
       gap: 10px;
-      font-size: 0.86rem;
-      margin: 10px 0;
+      font-size: 0.84rem;
+      margin: 12px 0;
       cursor: pointer;
     }
-    .checkbox-row input { margin-top: 4px; accent-color: var(--rose-deep); }
+    .checkbox-row input { margin-top: 4px; accent-color: var(--burgundy); }
 
-    /* Promo Status Pill */
     .promo-summary {
-      background: var(--blush-soft);
-      border-radius: 12px;
-      padding: 12px 15px;
-      font-size: 0.84rem;
-      margin-top: 12px;
-      border: 1px dashed var(--rose-muted);
+      background: var(--bg-ivory);
+      border-left: 3px solid var(--burgundy);
+      padding: 14px 16px;
+      font-size: 0.83rem;
+      margin-top: 14px;
     }
     .promo-tag {
       display: inline-block;
-      background: var(--rose-deep);
-      color: #fff;
-      font-size: 0.75rem;
-      padding: 2px 9px;
-      border-radius: 10px;
-      margin: 3px 4px 3px 0;
+      background: var(--burgundy);
+      color: #FAF6F0;
+      font-size: 0.72rem;
+      letter-spacing: 0.5px;
+      padding: 3px 10px;
+      margin: 4px 5px 4px 0;
+    }
+    .note-box {
+      background: #F6EFE4;
+      border: 1px solid var(--gold-champagne);
+      color: var(--burgundy-dark);
+      padding: 10px 14px;
+      font-size: 0.8rem;
+      margin-top: 8px;
+      display: none;
     }
 
     /* Product Grid */
     .product-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 14px;
+      gap: 16px;
     }
-    @media (max-width: 480px) {
+    @media (max-width: 500px) {
       .product-grid { grid-template-columns: 1fr; }
     }
     .product-item {
-      border: 1px solid var(--border-soft);
-      border-radius: 16px;
+      border: 1px solid var(--gold-light);
       padding: 14px;
-      background: var(--bg-cream);
+      background: var(--bg-ivory);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
     .product-placeholder {
-      height: 140px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #F7E8E6, #EFE1DF);
+      height: 150px;
+      border: 1px solid var(--gold-champagne);
+      background: linear-gradient(135deg, #F5ECE0, #EFE2D3);
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
-      color: var(--rose-deep);
-      font-size: 1.1rem;
+      color: var(--burgundy);
+      font-size: 1.15rem;
       margin-bottom: 12px;
       text-align: center;
-      padding: 10px;
+      padding: 12px;
     }
-    .product-name { font-weight: 600; font-size: 0.95rem; margin-bottom: 4px; }
-    .product-price { color: var(--rose-deep); font-weight: 600; font-size: 0.9rem; margin-bottom: 10px; }
+    .product-placeholder span {
+      font-family: 'Montserrat', sans-serif;
+      font-style: normal;
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold-champagne);
+      margin-bottom: 4px;
+    }
+    .product-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: 1.15rem;
+      margin-bottom: 2px;
+    }
+    .product-price {
+      color: var(--burgundy);
+      font-weight: 500;
+      font-size: 0.86rem;
+      margin-bottom: 12px;
+    }
 
     /* Buttons */
     .btn {
-      background: var(--rose-deep);
-      color: #fff;
-      border: none;
-      padding: 11px 16px;
-      border-radius: 12px;
-      font-family: inherit;
+      background: var(--burgundy);
+      color: #FAF6F0;
+      border: 1px solid var(--burgundy);
+      padding: 12px 18px;
+      font-family: 'Montserrat', sans-serif;
       font-weight: 500;
-      font-size: 0.88rem;
+      font-size: 0.78rem;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
       cursor: pointer;
       width: 100%;
-      transition: 0.2s;
+      transition: 0.25s;
     }
-    .btn:hover { background: #8E4F49; }
-    .btn:disabled {
-      background: #D3C5C4;
-      cursor: not-allowed;
+    .btn:hover {
+      background: var(--burgundy-dark);
+      border-color: var(--burgundy-dark);
     }
     .btn-outline {
       background: transparent;
-      border: 1px solid var(--rose-deep);
-      color: var(--rose-deep);
+      border: 1px solid var(--burgundy);
+      color: var(--burgundy);
     }
-    .btn-outline:hover { background: var(--blush-soft); }
+    .btn-outline:hover {
+      background: var(--burgundy);
+      color: #FAF6F0;
+    }
 
-    /* Cart Section */
+    /* Cart */
     .cart-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 8px 0;
-      border-bottom: 1px solid var(--border-soft);
-      font-size: 0.88rem;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--gold-light);
+      font-size: 0.86rem;
     }
     .qty-controls button {
-      background: var(--blush-soft);
-      border: none;
+      background: var(--bg-ivory);
+      border: 1px solid var(--gold-champagne);
       width: 26px;
       height: 26px;
-      border-radius: 8px;
       cursor: pointer;
-      font-weight: bold;
-      color: var(--rose-deep);
-    }
-    .note-box {
-      background: #FFF6EB;
-      border: 1px solid #F0D6B8;
-      color: #7A542E;
-      padding: 10px 12px;
-      border-radius: 10px;
-      font-size: 0.8rem;
-      margin-top: 10px;
-      display: none;
+      color: var(--burgundy);
+      font-weight: 600;
     }
 
     /* Rules Box */
     .rules-box {
-      background: var(--bg-cream);
-      border: 1px solid var(--border-soft);
-      border-radius: 14px;
-      padding: 16px;
-      font-size: 0.84rem;
+      background: var(--bg-ivory);
+      border: 1px solid var(--gold-light);
+      padding: 18px;
+      font-size: 0.82rem;
       max-height: 230px;
       overflow-y: auto;
       margin-bottom: 14px;
@@ -290,7 +363,7 @@
     .modal-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(58, 45, 44, 0.55);
+      background: rgba(36, 25, 27, 0.65);
       display: none;
       align-items: center;
       justify-content: center;
@@ -298,218 +371,233 @@
       z-index: 999;
     }
     .modal-content {
-      background: #fff;
-      border-radius: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--gold-champagne);
       max-width: 520px;
       width: 100%;
       max-height: 85vh;
       overflow-y: auto;
-      padding: 24px;
+      padding: 28px 24px;
       position: relative;
     }
     .close-modal {
       position: absolute;
-      top: 16px;
+      top: 14px;
       right: 18px;
       background: none;
       border: none;
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       cursor: pointer;
       color: var(--text-muted);
     }
     .review-card {
-      background: var(--bg-cream);
-      border: 1px solid var(--border-soft);
-      border-radius: 12px;
-      padding: 12px;
+      background: var(--bg-ivory);
+      border-left: 2px solid var(--gold-champagne);
+      padding: 12px 14px;
       margin-bottom: 10px;
-      font-size: 0.86rem;
+      font-size: 0.84rem;
     }
 
     footer {
       text-align: center;
-      padding: 24px 12px;
-      font-size: 0.85rem;
+      padding: 28px 12px;
+      font-size: 0.8rem;
       color: var(--text-muted);
+      letter-spacing: 0.5px;
     }
     .ig-btn {
       display: inline-block;
-      margin-top: 10px;
-      padding: 10px 22px;
-      border-radius: 30px;
-      background: var(--text-dark);
-      color: #fff;
+      margin-top: 12px;
+      padding: 11px 24px;
+      border: 1px solid var(--burgundy);
+      color: var(--burgundy);
       text-decoration: none;
-      font-size: 0.85rem;
+      font-size: 0.76rem;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      transition: 0.25s;
+    }
+    .ig-btn:hover {
+      background: var(--burgundy);
+      color: #FAF6F0;
     }
   </style>
 </head>
 <body>
 
-  <!-- Banner Status Kalender Hari Besar Otomatis -->
-  <div id="holidayBanner" class="holiday-banner">
-    Memeriksa kalender promo hari ini...
+  <div id="holidayBanner" class="top-ribbon">
+    Memeriksa Kalender Privilege Hari Ini...
   </div>
 
   <div class="container">
     <!-- HEADER -->
     <header>
+      <div class="monogram">B</div>
       <h1 class="brand-title">Bellachérie.</h1>
-      <p class="brand-tagline">Made by a woman, for women — curated with grace & story.</p>
+      <p class="brand-tagline">Made by a woman, for women.</p>
+      <div class="divider-ornament"></div>
     </header>
 
-    <!-- PDF & CANVA LINKS -->
+    <!-- DOKUMEN PDF & KATALOG (TANPA CANVA & TANPA EMOJI) -->
     <div class="link-stack">
-      <a href="MADE%20BY%20A%20WOMAN,%20FOR%20WOMEN.pdf" target="_blank" class="btn-link primary-pdf">
-        <span>📖 Brand Story & Lookbook (PDF)</span>
-        <span class="badge-lang">Read PDF</span>
+      <a href="Normal.pdf.pdf" target="_blank" class="btn-editorial">
+        <div class="link-title-wrap">
+          <span class="link-main">Brand Story & Vision</span>
+          <span class="jp-sub">ブランドの物語とビジョン</span>
+        </div>
+        <span class="link-tag">Document PDF</span>
       </a>
-      <a href="https://canva.link/543g00zheskxg96" target="_blank" class="btn-link">
-        <span>✨ Official Catalogue & Links</span>
-        <span class="badge-lang">EN / JP</span>
-      </a>
-      <a href="https://canva.link/3pgy5zdh0trj1a5" target="_blank" class="btn-link">
-        <span>🌸 ブランドガイド・カタログ</span>
-        <span class="badge-lang">日本語</span>
+
+      <a href="Normal%20(1).pdf" target="_blank" class="btn-editorial">
+        <div class="link-title-wrap">
+          <span class="link-main">Official Catalogue & Links — 公式カタログ</span>
+          <span class="jp-sub">Dear, Woman Vol. 1 & Designer Open Call</span>
+        </div>
+        <span class="link-tag">Lookbook PDF</span>
       </a>
     </div>
 
-    <!-- MEMBER PASS & VERIFIKASI DISKON -->
+    <!-- MEMBER PASS & PRIVILEGE -->
     <section class="card">
-      <h2 class="section-title">Member Pass & Privilege</h2>
+      <span class="section-roman">I. Private Privilege</span>
+      <h2 class="section-title">Member Pass & Verification</h2>
       <p class="section-sub">
-        Isi data diri untuk mengecek promo aktif hari ini (berlaku 24 jam & dapat digabung hingga <strong>22%</strong>).
+        Lengkapi identitas berikut untuk mengaktifkan potongan otomatis (berlaku 24 jam).
       </p>
 
       <div class="form-group">
         <label>Nama Lengkap</label>
-        <input type="text" id="buyerName" placeholder="Contoh: Kayzhia Azzahra" oninput="calculateTotal()">
+        <input type="text" id="buyerName" placeholder="Masukkan nama lengkap" oninput="calculateTotal()">
       </div>
 
       <div class="form-group">
-        <label>Tanggal Lahir (Diskon 5% otomatis aktif tepat di hari ulang tahunmu selama 24 jam)</label>
+        <label>Tanggal Lahir (Otomatis 5% tepat di hari ulang tahun — 24 jam)</label>
         <input type="date" id="buyerDob" onchange="calculateTotal()">
       </div>
 
       <label class="checkbox-row">
         <input type="checkbox" id="isStudent" onchange="toggleStudentInput(); calculateTotal();">
-        <span>Saya Mahasiswa Aktif (<strong>+10%</strong> — wajib melampirkan foto KTM saat konfirmasi di WhatsApp)</span>
+        <span><strong>Status Mahasiswa Aktif (+10%)</strong> — wajib melampirkan foto Kartu Tanda Mahasiswa (KTM) saat konfirmasi di WhatsApp.</span>
       </label>
 
-      <div id="studentDetailBox" style="display:none; margin-bottom: 12px;">
-        <input type="text" id="studentInfo" placeholder="Nama Universitas & NIM (Contoh: Univ. Indonesia - 2306xxxx)" oninput="calculateTotal()">
+      <div id="studentDetailBox" style="display:none; margin-bottom: 14px;">
+        <input type="text" id="studentInfo" placeholder="Nama Universitas & NIM" oninput="calculateTotal()">
       </div>
 
       <div class="form-group">
-        <label>Kode Voucher Spesial (<strong>+7%</strong>)</label>
-        <input type="text" id="voucherInput" placeholder="Masukkan kode voucher (Contoh: CHERIE7)" oninput="calculateTotal()">
+        <label>Kode Voucher Spesial (+7% — Diverifikasi Admin di WhatsApp)</label>
+        <input type="text" id="voucherInput" placeholder="Masukkan kode voucher jika ada" oninput="calculateTotal()">
         <div id="voucherNote" class="note-box">
-          ⚠️ <strong>Info Penting:</strong> Kode voucher berhasil diterapkan! Sistem akan otomatis mencantumkan kode ini, pastikan juga tetap <em>noted</em> saat konfirmasi pesanan di WhatsApp.
+          <strong>Catatan Verifikasi Kode:</strong> Kode voucher Anda akan dicantumkan otomatis ke dalam pesan WhatsApp. Potongan <strong>+7%</strong> akan diterapkan langsung setelah admin memverifikasi keaslian dan masa berlaku kode tersebut di chat WhatsApp.
         </div>
       </div>
 
       <div class="promo-summary" id="promoSummary">
-        Tidak ada diskon tambahan aktif. Total diskon: <strong>0%</strong>.
+        Belum ada potongan otomatis yang aktif hari ini.
       </div>
     </section>
 
-    <!-- KATALOG PRODUK -->
+    <!-- KATALOG PRODUK (CONTOH SEMENTARA) -->
     <section class="card">
+      <span class="section-roman">II. The Atelier</span>
       <h2 class="section-title">Curated Collection</h2>
-      <p class="section-sub">Pilih produk favoritmu dan sesuaikan jumlahnya di keranjang belanja.</p>
+      <p class="section-sub">Pilih busana atau aksesori untuk ditambahkan ke dalam tas belanja Anda.</p>
 
       <div class="product-grid" id="productList"></div>
     </section>
 
-    <!-- KERANJANG & CHECKOUT WHATSAPP -->
+    <!-- KERANJANG & CHECKOUT -->
     <section class="card">
+      <span class="section-roman">III. Order Summary</span>
       <h2 class="section-title">Your Shopping Bag</h2>
       <div id="cartItems">
-        <p style="font-size:0.86rem; color:var(--text-muted);">Keranjang masih kosong. Yuk pilih produk di atas!</p>
+        <p style="font-size:0.85rem; color:var(--text-muted);">Tas belanja Anda masih kosong.</p>
       </div>
 
-      <div style="margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--border-soft); font-size: 0.92rem;">
-        <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
-          <span>Subtotal:</span>
+      <div style="margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--gold-light); font-size: 0.9rem;">
+        <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+          <span>Subtotal</span>
           <span id="subtotalText">Rp 0</span>
         </div>
-        <div style="display:flex; justify-content:space-between; margin-bottom:4px; color:var(--rose-deep);">
-          <span>Total Potongan Diskon (<span id="discountPercentText">0%</span>):</span>
+        <div style="display:flex; justify-content:space-between; margin-bottom:6px; color:var(--burgundy);">
+          <span>Potongan Otomatis (<span id="discountPercentText">0%</span>)</span>
           <span id="discountAmountText">- Rp 0</span>
         </div>
-        <div style="display:flex; justify-content:space-between; font-weight:600; font-size:1.05rem; margin-top:8px;">
-          <span>Total Pembayaran:</span>
+        <div style="display:flex; justify-content:space-between; font-weight:600; font-size:1.05rem; margin-top:10px; padding-top:8px; border-top:1px dashed var(--gold-champagne);">
+          <span>Estimasi Pembayaran</span>
           <span id="finalTotalText">Rp 0</span>
         </div>
       </div>
 
-      <p style="font-size:0.78rem; color:var(--text-muted); margin: 12px 0;">
-        *Catatan: Jika menggunakan diskon Ulang Tahun, Kartu Mahasiswa (KTM), atau Kode Voucher, harap lampirkan bukti & <em>noted</em> di chat WhatsApp saat konfirmasi.
+      <p style="font-size:0.76rem; color:var(--text-muted); margin: 14px 0;">
+        *Seluruh bukti identitas (Ulang Tahun / KTM) serta verifikasi kode voucher (+7%) akan dikonfirmasi langsung melalui WhatsApp sebelum pembayaran dilakukan.
       </p>
 
-      <button class="btn" onclick="checkoutWhatsApp()">Checkout via WhatsApp</button>
+      <button class="btn" onclick="checkoutWhatsApp()">Proceed to WhatsApp Confirmation</button>
     </section>
 
-    <!-- OPEN DESIGNER SUBMISSION (SD - DEWASA) -->
+    <!-- OPEN DESIGNER SUBMISSION -->
     <section class="card">
-      <h2 class="section-title">Open Designer Collaboration</h2>
+      <span class="section-roman">IV. Co-Creation</span>
+      <h2 class="section-title">Community Design Open Call</h2>
       <p class="section-sub">
-        Bellachérie. membuka kesempatan bagi siapa saja — mulai dari <strong>jenjang SD hingga dewasa</strong> — untuk mengirimkan desain & cerita karyamu.
+        Terbuka untuk seluruh kreator perempuan dari jenjang <strong>SD hingga dewasa</strong> untuk mengirimkan sketsa, cerita karya, serta profil diri.
       </p>
 
       <div class="rules-box">
-        <strong>📜 Syarat & Ketentuan Pengiriman Desain & CV (Wajib Dibaca):</strong>
+        <strong>Syarat & Ketentuan Pengiriman Karya (Wajib Dibaca):</strong>
         <ul style="margin-top:8px;">
-          <li><strong>Gratis Tanpa Biaya:</strong> Pendaftaran dan pengiriman desain 100% gratis. Hati-hati terhadap pihak yang memungut biaya.</li>
-          <li><strong>Terbuka untuk Semua Usia:</strong> Mulai dari tingkat SD hingga umum. Peserta di bawah 17 tahun wajib mendapat izin orang tua/wali.</li>
-          <li><strong>Keaslian Karya:</strong> Desain wajib 100% karya orisinal sendiri, tidak menjiplak, dan tidak melanggar hak cipta pihak lain.</li>
-          <li><strong>Apresiasi Launching (Rp1.000.000):</strong> Setiap desain terpilih yang diproduksi pada edisi launching akan mencantumkan nama desainer secara resmi dan mendapatkan imbalan awal sebesar <strong>Rp1.000.000</strong>.</li>
-          <li><strong>Royalti Penjualan 2%:</strong> Apabila produk dari desain tersebut terjual mencapai <strong>200 pcs</strong>, desainer berhak mendapatkan royalti tambahan sebesar <strong>2%</strong> dari total pendapatan penjualan produk tersebut.</li>
-          <li><strong>Kelengkapan Data:</strong> Pengirim wajib menyertakan CV/profil singkat, alasan/filosofi di balik desain, serta kontak yang dapat dihubungi.</li>
+          <li><strong>Tanpa Biaya Pendaftaran:</strong> Seluruh proses pengajuan desain dan CV bersifat 100% gratis.</li>
+          <li><strong>Terbuka untuk Semua Usia:</strong> Mulai dari jenjang SD hingga dewasa. Peserta di bawah usia 17 tahun wajib memperoleh persetujuan orang tua/wali.</li>
+          <li><strong>Orisinalitas Karya:</strong> Desain harus merupakan karya asli yang belum pernah dipublikasikan dan bebas dari pelanggaran hak cipta.</li>
+          <li><strong>Apresiasi Launching (Rp1.000.000):</strong> Karya terpilih yang diproduksi pada edisi rilis akan mencantumkan nama desainer secara penuh dan menerima honorarium awal sebesar <strong>Rp1.000.000</strong>.</li>
+          <li><strong>Royalti Penjualan 2%:</strong> Apabila produk dari desain tersebut terjual mencapai <strong>200 pcs</strong>, desainer berhak memperoleh royalti tambahan sebesar <strong>2%</strong> dari total pendapatan penjualan produk tersebut.</li>
+          <li><strong>Kelengkapan Data:</strong> Pengirim wajib menyertakan CV singkat, alasan/filosofi di balik desain, serta kontak aktif.</li>
         </ul>
       </div>
 
       <label class="checkbox-row">
         <input type="checkbox" id="agreeRules" onchange="toggleDesignerForm()">
-        <span>Saya telah membaca, memahami, dan menyetujui seluruh peraturan di atas.</span>
+        <span>Saya telah membaca, memahami, dan menyetujui seluruh ketentuan di atas.</span>
       </label>
 
-      <div id="designerFormArea" style="display:none; margin-top:16px; border-top:1px solid var(--border-soft); padding-top:16px;">
+      <div id="designerFormArea" style="display:none; margin-top:16px; border-top:1px solid var(--gold-light); padding-top:16px;">
         <div class="form-group">
           <label>Nama Lengkap Desainer</label>
-          <input type="text" id="desName" placeholder="Nama lengkapmu">
+          <input type="text" id="desName" placeholder="Nama lengkap">
         </div>
         <div class="form-group">
-          <label>Usia & Jenjang Pendidikan / Pekerjaan</label>
-          <input type="text" id="desAge" placeholder="Contoh: 11 tahun (Kelas 5 SD) / 21 tahun (Mahasiswi)">
+          <label>Usia & Jenjang Pendidikan / Profesi</label>
+          <input type="text" id="desAge" placeholder="Contoh: 12 tahun (SD) / 20 tahun (Mahasiswi)">
         </div>
         <div class="form-group">
-          <label>Link Portofolio / CV / File Desain (Google Drive / Canva)</label>
-          <input type="text" id="desLink" placeholder="Tempel link Google Drive / Canva desain & CV kamu">
+          <label>Tautan File Desain & CV (Google Drive / Dokumen PDF)</label>
+          <input type="text" id="desLink" placeholder="Tempel tautan Google Drive berisi sketsa & CV">
         </div>
         <div class="form-group">
-          <label>Alasan & Cerita di Balik Desain Ini</label>
-          <textarea id="desStory" rows="3" placeholder="Ceritakan inspirasi dan makna desainmu..."></textarea>
+          <label>Filosofi & Alasan di Balik Desain</label>
+          <textarea id="desStory" rows="3" placeholder="Tuliskan makna dan cerita di balik rancangan Anda..."></textarea>
         </div>
-        <button class="btn" onclick="submitDesignerWA()">Kirim Pengajuan Desain & CV</button>
+        <button class="btn" onclick="submitDesignerWA()">Submit Design & CV via WhatsApp</button>
       </div>
     </section>
 
     <!-- REVIEW & KOTAK MASUKAN -->
     <section class="card" style="text-align:center;">
-      <h2 class="section-title">Community & Love Notes</h2>
-      <p class="section-sub">Baca pengalaman mereka bersama Bellachérie. atau tinggalkan saran untuk kami.</p>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
-        <button class="btn btn-outline" onclick="openModal('reviewModal')">★ Lihat & Tulis Review</button>
-        <button class="btn btn-outline" onclick="openModal('feedbackModal')">💌 Kotak Masukan</button>
+      <span class="section-roman">V. Society Notes</span>
+      <h2 class="section-title">Reviews & Correspondence</h2>
+      <p class="section-sub">Baca kesan pelanggan kami atau kirimkan masukan pribadi untuk Bellachérie.</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        <button class="btn btn-outline" onclick="openModal('reviewModal')">Client Reviews</button>
+        <button class="btn btn-outline" onclick="openModal('feedbackModal')">Send Suggestion</button>
       </div>
     </section>
 
-    <!-- FOOTER & INSTAGRAM -->
+    <!-- FOOTER -->
     <footer>
       <p>© 2026 Bellachérie. — Made by a woman, for women.</p>
-      <a href="https://instagram.com/bellacheries" target="_blank" class="ig-btn">
-        Follow us on Instagram @bellacheries
+      <a href="https://www.instagram.com/bellacheries" target="_blank" class="ig-btn">
+        Instagram @bellacheries
       </a>
     </footer>
   </div>
@@ -518,26 +606,26 @@
   <div id="reviewModal" class="modal-overlay">
     <div class="modal-content">
       <button class="close-modal" onclick="closeModal('reviewModal')">×</button>
-      <h3 class="serif" style="font-size:1.7rem; margin-bottom:6px;">Customer Reviews</h3>
-      <p style="font-size:0.84rem; color:var(--text-muted); margin-bottom:14px;">Ulasan tulus dari perempuan untuk perempuan.</p>
+      <h3 class="serif" style="font-size:1.8rem; color:var(--burgundy); margin-bottom:4px;">Client Reviews</h3>
+      <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:16px;">Catatan pengalaman dari komunitas Bellachérie.</p>
 
       <div id="reviewsContainer"></div>
 
-      <div style="margin-top:16px; padding-top:14px; border-top:1px solid var(--border-soft);">
-        <h4 style="font-size:0.95rem; margin-bottom:8px;">Tulis Review Kamu</h4>
+      <div style="margin-top:18px; padding-top:14px; border-top:1px solid var(--gold-light);">
+        <h4 style="font-size:0.85rem; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">Write a Review</h4>
         <div class="form-group">
-          <input type="text" id="revName" placeholder="Nama kamu">
+          <input type="text" id="revName" placeholder="Nama Anda">
         </div>
         <div class="form-group">
           <select id="revRating">
-            <option value="★★★★★">★★★★★ (5/5 - Sangat Suka)</option>
-            <option value="★★★★☆">★★★★☆ (4/5 - Bagus)</option>
+            <option value="5 / 5">5 / 5 — Exceptional</option>
+            <option value="4 / 5">4 / 5 — Lovely</option>
           </select>
         </div>
         <div class="form-group">
-          <textarea id="revText" rows="2" placeholder="Bagikan pengalamanmu..."></textarea>
+          <textarea id="revText" rows="2" placeholder="Bagikan ulasan Anda..."></textarea>
         </div>
-        <button class="btn" onclick="addReview()">Kirim Review</button>
+        <button class="btn" onclick="addReview()">Publish Review</button>
       </div>
     </div>
   </div>
@@ -546,53 +634,48 @@
   <div id="feedbackModal" class="modal-overlay">
     <div class="modal-content">
       <button class="close-modal" onclick="closeModal('feedbackModal')">×</button>
-      <h3 class="serif" style="font-size:1.7rem; margin-bottom:6px;">Kotak Masukan & Saran</h3>
-      <p style="font-size:0.84rem; color:var(--text-muted); margin-bottom:14px;">Punya ide produk atau saran untuk Bellachérie.? Kami senang mendengarnya.</p>
+      <h3 class="serif" style="font-size:1.8rem; color:var(--burgundy); margin-bottom:4px;">Private Suggestion</h3>
+      <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:16px;">Sampaikan ide atau masukan Anda secara langsung kepada tim kami.</p>
       <div class="form-group">
-        <input type="text" id="fbName" placeholder="Nama kamu (boleh anonim)">
+        <input type="text" id="fbName" placeholder="Nama Anda (opsional)">
       </div>
       <div class="form-group">
-        <textarea id="fbMessage" rows="3" placeholder="Tulis masukanmu di sini..."></textarea>
+        <textarea id="fbMessage" rows="3" placeholder="Tuliskan pesan atau saran Anda..."></textarea>
       </div>
-      <button class="btn" onclick="sendFeedback()">Kirim Masukan</button>
+      <button class="btn" onclick="sendFeedback()">Send to WhatsApp</button>
     </div>
   </div>
 
   <script>
-    // ================= PENGATURAN TOKO (MUDAH DIUBAH) =================
-    const WA_NUMBER = "818029925628"; // Nomor WhatsApp tujuan
-    const VALID_VOUCHER_CODE = "CHERIE7"; // Kode voucher diskon 7%
+    const WA_NUMBER = "818029925628";
 
-    // Daftar Produk (Bisa kamu tambah atau ubah nama & harganya kapan saja)
+    // Daftar Produk Contoh (Silakan ubah nama & harga sesuai koleksimu)
     const PRODUCTS = [
-      { id: 1, name: "Bellachérie. Signature Scarf", price: 185000, tag: "First Edition" },
-      { id: 2, name: "Chérie Everyday Tote Bag", price: 220000, tag: "Limited" },
-      { id: 3, name: "Rosé Silk Hair Scrunchie Set", price: 89000, tag: "Bestseller" },
-      { id: 4, name: "Women Empowerment Journal", price: 145000, tag: "New" }
+      { id: 1, name: "Kassandra Top", price: 245000, tag: "Dear, Woman Vol. 1" },
+      { id: 2, name: "Katerina Skirt", price: 275000, tag: "Dear, Woman Vol. 1" },
+      { id: 3, name: "Bellachérie. Signature Scarf", price: 185000, tag: "Atelier" },
+      { id: 4, name: "Chérie Everyday Tote", price: 220000, tag: "Limited" }
     ];
 
-    // Daftar Hari Libur Nasional & Perayaan (Format: "MM-DD" untuk tanggal tetap setiap tahun)
+    // Kalender Hari Raya & Perayaan Nasional (Otomatis 24 Jam)
     const FIXED_HOLIDAYS = {
-      "01-01": "Tahun Baru",
+      "01-01": "New Year's Day",
       "04-21": "Hari Kartini",
-      "08-17": "Hari Kemerdekaan 17 Agustus",
+      "08-17": "Independence Day (17 Agustus)",
       "11-10": "Hari Pahlawan",
-      "12-25": "Hari Raya Natal"
+      "12-25": "Christmas Day"
     };
 
-    // Tanggal Hari Raya Lunar/Hijriah Tahun 2026 (Format: "YYYY-MM-DD")
     const SPECIAL_DATES_2026 = {
-      "2026-02-17": "Tahun Baru Imlek (CNY)",
-      "2026-03-20": "Hari Raya Idul Fitri / Ramadhan",
-      "2026-03-21": "Hari Raya Idul Fitri"
+      "2026-02-17": "Chinese New Year",
+      "2026-03-20": "Eid al-Fitr / Ramadhan",
+      "2026-03-21": "Eid al-Fitr"
     };
-    // =================================================================
 
     let cart = {};
     let holidayDiscount = 0;
     let holidayName = "";
 
-    // Cek Kalender Otomatis (Berlaku tepat 24 jam sesuai tanggal hari ini)
     function checkCalendarHoliday() {
       const now = new Date();
       const yyyy = now.getFullYear();
@@ -611,9 +694,9 @@
 
       const banner = document.getElementById("holidayBanner");
       if (holidayDiscount > 0) {
-        banner.innerHTML = `✨ Spesial <strong>${holidayName}</strong>! Diskon <strong>5%</strong> aktif otomatis selama 24 jam hari ini.`;
+        banner.innerHTML = `${holidayName} Privilege — 5% Off Automatically Applied for 24 Hours`;
       } else {
-        banner.innerHTML = `🌷 Selamat datang di <strong>Bellachérie.</strong> — Cek promo ulang tahun & kartu mahasiswa di bawah!`;
+        banner.innerHTML = `Bellachérie. Atelier — Private Member & Student Privileges Available`;
       }
     }
 
@@ -626,11 +709,14 @@
       container.innerHTML = PRODUCTS.map(p => `
         <div class="product-item">
           <div>
-            <div class="product-placeholder">${p.tag}<br>Bellachérie.</div>
+            <div class="product-placeholder">
+              <span>${p.tag}</span>
+              Bellachérie.
+            </div>
             <div class="product-name">${p.name}</div>
             <div class="product-price">${formatRupiah(p.price)}</div>
           </div>
-          <button class="btn" onclick="addToCart(${p.id})">+ Tambah</button>
+          <button class="btn" onclick="addToCart(${p.id})">Add to Bag</button>
         </div>
       `).join("");
     }
@@ -653,59 +739,60 @@
     }
 
     function getActiveDiscounts() {
-      let totalPercent = 0;
+      let autoPercent = 0;
       let tags = [];
 
-      // 1. Diskon Hari Raya (5%)
       if (holidayDiscount > 0) {
-        totalPercent += 5;
+        autoPercent += 5;
         tags.push(`${holidayName} (+5%)`);
       }
 
-      // 2. Diskon Ulang Tahun Pembeli (5% - 24 jam jika tanggal & bulan cocok hari ini)
       const dobVal = document.getElementById("buyerDob").value;
       if (dobVal) {
         const now = new Date();
         const todayMD = `${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
         const dobMD = dobVal.slice(5, 10);
         if (todayMD === dobMD) {
-          totalPercent += 5;
+          autoPercent += 5;
           tags.push("Birthday Privilege (+5%)");
         }
       }
 
-      // 3. Diskon Mahasiswa (+10%)
       const isStudent = document.getElementById("isStudent").checked;
       if (isStudent) {
-        totalPercent += 10;
-        tags.push("Kartu Mahasiswa (+10%)");
+        autoPercent += 10;
+        tags.push("Student Privilege (+10%)");
       }
 
-      // 4. Diskon Kode Voucher (+7%)
+      // Kode Voucher tidak memotong otomatis — menunggu verifikasi admin di WA
       const codeInput = document.getElementById("voucherInput").value.trim().toUpperCase();
       const voucherNote = document.getElementById("voucherNote");
-      if (codeInput === VALID_VOUCHER_CODE) {
-        totalPercent += 7;
-        tags.push(`Voucher ${VALID_VOUCHER_CODE} (+7%)`);
+      if (codeInput.length > 0) {
         voucherNote.style.display = "block";
       } else {
         voucherNote.style.display = "none";
       }
 
-      return { totalPercent, tags };
+      return { autoPercent, tags, codeInput };
     }
 
     function calculateTotal() {
-      const { totalPercent, tags } = getActiveDiscounts();
+      const { autoPercent, tags, codeInput } = getActiveDiscounts();
       const summaryEl = document.getElementById("promoSummary");
 
+      let html = "";
       if (tags.length > 0) {
-        summaryEl.innerHTML = `Promo aktif hari ini: <br>` +
-          tags.map(t => `<span class="promo-tag">${t}</span>`).join("") +
-          `<div style="margin-top:6px;">Total Potongan Harga: <strong>${totalPercent}%</strong></div>`;
+        html += `Potongan otomatis aktif:<br>` + tags.map(t => `<span class="promo-tag">${t}</span>`).join("");
+        html += `<div style="margin-top:6px;">Total Potongan Otomatis: <strong>${autoPercent}%</strong></div>`;
       } else {
-        summaryEl.innerHTML = `Belum ada promo aktif. Isi tanggal lahir (jika hari ini ulang tahun), centang mahasiswa, atau masukkan kode voucher.`;
+        html += `Belum ada potongan otomatis yang aktif hari ini.`;
       }
+
+      if (codeInput.length > 0) {
+        html += `<div style="margin-top:6px; color:var(--burgundy);">Kode Voucher <strong>"${codeInput}"</strong> tercatat — menunggu konfirmasi admin di WhatsApp (+7%).</div>`;
+      }
+
+      summaryEl.innerHTML = html;
 
       let subtotal = 0;
       for (let id in cart) {
@@ -713,11 +800,11 @@
         if (prod) subtotal += prod.price * cart[id];
       }
 
-      const discountAmount = Math.round(subtotal * (totalPercent / 100));
+      const discountAmount = Math.round(subtotal * (autoPercent / 100));
       const finalTotal = subtotal - discountAmount;
 
       document.getElementById("subtotalText").innerText = formatRupiah(subtotal);
-      document.getElementById("discountPercentText").innerText = totalPercent + "%";
+      document.getElementById("discountPercentText").innerText = autoPercent + "%";
       document.getElementById("discountAmountText").innerText = "- " + formatRupiah(discountAmount);
       document.getElementById("finalTotalText").innerText = formatRupiah(finalTotal);
     }
@@ -727,7 +814,7 @@
       const ids = Object.keys(cart);
 
       if (ids.length === 0) {
-        container.innerHTML = `<p style="font-size:0.86rem; color:var(--text-muted);">Keranjang masih kosong. Yuk pilih produk di atas!</p>`;
+        container.innerHTML = `<p style="font-size:0.85rem; color:var(--text-muted);">Tas belanja Anda masih kosong.</p>`;
       } else {
         container.innerHTML = ids.map(id => {
           const prod = PRODUCTS.find(p => p.id == id);
@@ -752,7 +839,7 @@
     function checkoutWhatsApp() {
       const ids = Object.keys(cart);
       if (ids.length === 0) {
-        alert("Keranjang belanjamu masih kosong. Silakan pilih produk terlebih dahulu.");
+        alert("Tas belanja Anda masih kosong.");
         return;
       }
 
@@ -760,8 +847,7 @@
       const dob = document.getElementById("buyerDob").value || "-";
       const isStudent = document.getElementById("isStudent").checked;
       const studentInfo = document.getElementById("studentInfo").value.trim() || "-";
-      const codeInput = document.getElementById("voucherInput").value.trim().toUpperCase();
-      const { totalPercent, tags } = getActiveDiscounts();
+      const { autoPercent, tags, codeInput } = getActiveDiscounts();
 
       let subtotal = 0;
       let itemLines = "";
@@ -769,33 +855,35 @@
         const prod = PRODUCTS.find(p => p.id == id);
         const lineTotal = prod.price * cart[id];
         subtotal += lineTotal;
-        itemLines += `• ${prod.name} (${cart[id]}x) = ${formatRupiah(lineTotal)}\n`;
+        itemLines += `- ${prod.name} (${cart[id]}x) = ${formatRupiah(lineTotal)}\n`;
       });
 
-      const discountAmount = Math.round(subtotal * (totalPercent / 100));
+      const discountAmount = Math.round(subtotal * (autoPercent / 100));
       const finalTotal = subtotal - discountAmount;
 
-      let message = `Halo Bellachérie.! Saya ingin memesan:\n\n`;
-      message += `*Data Pembeli:*\n`;
+      let message = `Halo Bellachérie., saya ingin melakukan pemesanan:\n\n`;
+      message += `*Data Pemesan:*\n`;
       message += `Nama: ${name}\n`;
       message += `Tanggal Lahir: ${dob}\n`;
       if (isStudent) {
-        message += `Status: Mahasiswa (${studentInfo}) — *Akan saya lampirkan foto KTM*\n`;
+        message += `Status: Mahasiswa (${studentInfo}) — siap melampirkan foto KTM\n`;
       }
-      if (codeInput === VALID_VOUCHER_CODE) {
-        message += `Kode Voucher (NOTED): ${codeInput}\n`;
+      if (codeInput.length > 0) {
+        message += `Kode Voucher (Mohon Verifikasi +7%): ${codeInput}\n`;
       }
       message += `\n*Rincian Pesanan:*\n${itemLines}\n`;
       message += `Subtotal: ${formatRupiah(subtotal)}\n`;
-      message += `Promo Aktif (${totalPercent}%): ${tags.length > 0 ? tags.join(", ") : "Tidak ada"}\n`;
-      message += `Potongan Harga: -${formatRupiah(discountAmount)}\n`;
-      message += `*Total Akhir: ${formatRupiah(finalTotal)}*\n\n`;
-      message += `Mohon info pembayaran selanjutnya ya. Terima kasih! 🌸`;
+      message += `Potongan Otomatis (${autoPercent}%): ${tags.length > 0 ? tags.join(", ") : "Tidak ada"}\n`;
+      message += `Nominal Potongan Otomatis: -${formatRupiah(discountAmount)}\n`;
+      message += `*Estimasi Sementara: ${formatRupiah(finalTotal)}*\n`;
+      if (codeInput.length > 0) {
+        message += `(Menunggu konfirmasi validasi kode voucher "${codeInput}" oleh admin untuk tambahan potongan 7%)\n`;
+      }
+      message += `\nMohon konfirmasi ketersediaan dan total akhir pembayaran. Terima kasih.`;
 
       window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`, "_blank");
     }
 
-    // Toggle Form Desainer setelah centang aturan
     function toggleDesignerForm() {
       const agreed = document.getElementById("agreeRules").checked;
       document.getElementById("designerFormArea").style.display = agreed ? "block" : "none";
@@ -808,24 +896,23 @@
       const story = document.getElementById("desStory").value.trim();
 
       if (!name || !age || !link || !story) {
-        alert("Mohon lengkapi seluruh data desainer, link file desain/CV, dan cerita karyamu.");
+        alert("Mohon lengkapi seluruh data desainer, tautan file, dan filosofi karya.");
         return;
       }
 
-      let msg = `Halo Bellachérie.! Saya ingin mengirimkan pengajuan desain & CV (telah menyetujui Syarat & Ketentuan):\n\n`;
+      let msg = `Halo Bellachérie., saya ingin mengajukan karya desain & CV (telah menyetujui Syarat & Ketentuan):\n\n`;
       msg += `Nama Desainer: ${name}\n`;
       msg += `Usia / Jenjang: ${age}\n`;
-      msg += `Link Desain & CV: ${link}\n`;
-      msg += `Filosofi / Alasan Desain:\n${story}\n\n`;
-      msg += `Terima kasih atas kesempatannya! ✨`;
+      msg += `Tautan Desain & CV: ${link}\n`;
+      msg += `Filosofi & Alasan Desain:\n${story}\n\n`;
+      msg += `Terima kasih.`;
 
       window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, "_blank");
     }
 
-    // Modal & Review System
     const defaultReviews = [
-      { name: "Alya N.", rating: "★★★★★", text: "Suka banget sama konsep brand-nya yang hangat dan memberdayakan perempuan. Packaging-nya super cantik!" },
-      { name: "Nadia K.", rating: "★★★★★", text: "Senang banget pas ulang tahun dapat diskon otomatis dan proses checkout ke WA-nya rapi banget." }
+      { name: "Clarissa W.", rating: "5 / 5", text: "Konsepnya sangat anggun dan berkelas. Senang sekali melihat brand yang benar-benar memberi ruang bagi kreator perempuan." },
+      { name: "Nadia K.", rating: "5 / 5", text: "Pelayanannya sangat personal dan rapi. Potongan ulang tahunnya langsung terhitung otomatis." }
     ];
 
     function loadReviews() {
@@ -835,7 +922,7 @@
         <div class="review-card">
           <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
             <strong>${r.name}</strong>
-            <span style="color:var(--rose-deep);">${r.rating}</span>
+            <span style="color:var(--burgundy); font-weight:500;">${r.rating}</span>
           </div>
           <p>${r.text}</p>
         </div>
@@ -847,7 +934,7 @@
       const rating = document.getElementById("revRating").value;
       const text = document.getElementById("revText").value.trim();
       if (!name || !text) {
-        alert("Isi nama dan ulasanmu terlebih dahulu ya.");
+        alert("Mohon isi nama dan ulasan Anda.");
         return;
       }
       const saved = JSON.parse(localStorage.getItem("bellacherie_reviews") || "null") || defaultReviews;
@@ -862,10 +949,10 @@
       const name = document.getElementById("fbName").value.trim() || "Anonim";
       const msg = document.getElementById("fbMessage").value.trim();
       if (!msg) {
-        alert("Tulis masukanmu terlebih dahulu ya.");
+        alert("Mohon tuliskan saran atau masukan Anda.");
         return;
       }
-      const waText = `Halo Bellachérie.! Ada masukan/saran baru dari website:\n\nDari: ${name}\nPesan: ${msg}`;
+      const waText = `Halo Bellachérie., terdapat masukan baru dari website:\n\nDari: ${name}\nPesan: ${msg}`;
       window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waText)}`, "_blank");
       closeModal("feedbackModal");
     }
@@ -873,7 +960,6 @@
     function openModal(id) { document.getElementById(id).style.display = "flex"; }
     function closeModal(id) { document.getElementById(id).style.display = "none"; }
 
-    // Jalankan saat halaman dibuka
     checkCalendarHoliday();
     renderProducts();
     loadReviews();
