@@ -6,30 +6,29 @@
   <title>Bellachérie. — Made by a Woman, for Women</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-ivory: #FAF6F0;
+      --bg-ivory: #F8F3EB;
       --bg-card: #FFFDF9;
-      --burgundy: #5C1A26;
-      --burgundy-dark: #3E0F18;
-      --gold-champagne: #B89768;
-      --gold-light: #E8DEC8;
-      --text-ink: #24191B;
-      --text-muted: #6E5D60;
+      --maroon: #6B1422;
+      --maroon-dark: #450A14;
+      --gold-champagne: #B59260;
+      --gold-light: #E5D9C3;
+      --text-ink: #23181A;
+      --text-muted: #6C5B5E;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* Background Upper East Side / Tweed Pattern (Tanpa Wajah) */
+    /* Background Classic Woven Tweed & Subtle Pinstripe (Blair Waldorf Aesthetic) */
     body {
       font-family: 'Montserrat', sans-serif;
       background-color: var(--bg-ivory);
       background-image:
-        radial-gradient(rgba(184, 151, 104, 0.14) 1px, transparent 1px),
-        radial-gradient(rgba(92, 26, 38, 0.06) 1px, var(--bg-ivory) 1px);
-      background-size: 24px 24px;
-      background-position: 0 0, 12px 12px;
+        repeating-linear-gradient(45deg, rgba(181, 146, 96, 0.06) 0px, rgba(181, 146, 96, 0.06) 1px, transparent 1px, transparent 14px),
+        repeating-linear-gradient(-45deg, rgba(107, 20, 34, 0.04) 0px, rgba(107, 20, 34, 0.04) 1px, transparent 1px, transparent 14px),
+        linear-gradient(to bottom, #F9F4EC, #F3ECE0);
       color: var(--text-ink);
       line-height: 1.65;
       padding-bottom: 80px;
@@ -42,67 +41,63 @@
 
     /* Top Editorial Ribbon */
     .top-ribbon {
-      background-color: var(--burgundy);
+      background-color: var(--maroon);
       color: #F7EFE2;
       text-align: center;
-      padding: 10px 16px;
-      font-size: 0.78rem;
-      letter-spacing: 1.2px;
+      padding: 11px 16px;
+      font-size: 0.76rem;
+      letter-spacing: 1.4px;
       text-transform: uppercase;
-      border-bottom: 1px solid var(--gold-champagne);
+      border-bottom: 2px solid var(--gold-champagne);
     }
 
     .container {
-      max-width: 660px;
+      max-width: 670px;
       margin: 0 auto;
-      padding: 28px 18px;
+      padding: 30px 18px;
     }
 
-    /* Header Monogram */
+    /* Header Tanpa Logo B — Double Editorial Frame */
     header {
       text-align: center;
-      padding: 36px 20px 30px;
+      padding: 40px 24px 34px;
       background: var(--bg-card);
       border: 1px solid var(--gold-champagne);
-      outline: 4px solid var(--bg-card);
-      box-shadow: 0 10px 30px rgba(62, 15, 24, 0.06);
+      box-shadow:
+        inset 0 0 0 5px var(--bg-card),
+        inset 0 0 0 6px var(--gold-light),
+        0 12px 32px rgba(69, 10, 20, 0.07);
       margin-bottom: 28px;
-      position: relative;
     }
-    .monogram {
-      display: inline-block;
-      width: 44px;
-      height: 44px;
-      line-height: 42px;
-      border: 1px solid var(--gold-champagne);
-      border-radius: 50%;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem;
-      font-style: italic;
-      color: var(--burgundy);
-      margin-bottom: 12px;
+    .brand-eyebrow {
+      font-size: 0.68rem;
+      letter-spacing: 2.8px;
+      text-transform: uppercase;
+      color: var(--gold-champagne);
+      margin-bottom: 8px;
+      display: block;
     }
     .brand-title {
-      font-size: 3rem;
+      font-size: 3.2rem;
       letter-spacing: 2px;
-      color: var(--burgundy);
-      line-height: 1.1;
+      color: var(--maroon);
+      line-height: 1.05;
       margin-bottom: 8px;
     }
     .brand-tagline {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
-      font-size: 1.25rem;
+      font-size: 1.28rem;
       color: var(--text-muted);
     }
     .divider-ornament {
-      margin: 16px auto 0;
-      width: 80px;
+      margin: 18px auto 0;
+      width: 90px;
       height: 1px;
       background: var(--gold-champagne);
     }
 
-    /* Editorial PDF Links (Tanpa Canva & Tanpa Emoji) */
+    /* Editorial PDF Links */
     .link-stack {
       display: flex;
       flex-direction: column;
@@ -115,18 +110,19 @@
       justify-content: space-between;
       background: var(--bg-card);
       border: 1px solid var(--gold-champagne);
-      padding: 18px 22px;
+      box-shadow: inset 0 0 0 3px var(--bg-card), inset 0 0 0 4px var(--gold-light), 0 6px 18px rgba(35, 24, 26, 0.04);
+      padding: 18px 24px;
       text-decoration: none;
       color: var(--text-ink);
       transition: all 0.25s ease;
-      box-shadow: 0 4px 15px rgba(36, 25, 27, 0.03);
     }
     .btn-editorial:hover {
-      background: var(--burgundy);
+      background: var(--maroon);
       color: #FAF6F0;
+      box-shadow: 0 8px 22px rgba(107, 20, 34, 0.18);
       transform: translateY(-2px);
     }
-    .btn-editorial:hover .jp-sub,
+    .btn-editorial:hover .sub-desc,
     .btn-editorial:hover .link-tag {
       color: var(--gold-light);
       border-color: var(--gold-light);
@@ -137,43 +133,48 @@
     }
     .link-main {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       font-weight: 600;
       letter-spacing: 0.4px;
     }
-    .jp-sub {
+    .sub-desc {
       font-size: 0.78rem;
       color: var(--text-muted);
-      letter-spacing: 0.5px;
+      letter-spacing: 0.4px;
     }
     .link-tag {
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       text-transform: uppercase;
       letter-spacing: 1.5px;
       border: 1px solid var(--gold-champagne);
-      padding: 4px 10px;
-      color: var(--burgundy);
+      padding: 5px 11px;
+      color: var(--maroon);
+      white-space: nowrap;
+      margin-left: 12px;
     }
 
-    /* Section Card */
+    /* Section Card dengan Double Border Halus */
     .card {
       background: var(--bg-card);
-      border: 1px solid var(--gold-light);
-      padding: 26px 24px;
+      border: 1px solid var(--gold-champagne);
+      box-shadow:
+        inset 0 0 0 4px var(--bg-card),
+        inset 0 0 0 5px var(--gold-light),
+        0 10px 28px rgba(35, 24, 26, 0.05);
+      padding: 28px 26px;
       margin-bottom: 26px;
-      box-shadow: 0 8px 25px rgba(36, 25, 27, 0.04);
     }
     .section-roman {
-      font-size: 0.72rem;
-      letter-spacing: 2px;
+      font-size: 0.7rem;
+      letter-spacing: 2.2px;
       text-transform: uppercase;
       color: var(--gold-champagne);
       display: block;
       margin-bottom: 2px;
     }
     .section-title {
-      font-size: 1.9rem;
-      color: var(--burgundy);
+      font-size: 1.95rem;
+      color: var(--maroon);
       margin-bottom: 6px;
     }
     .section-sub {
@@ -186,17 +187,23 @@
     .form-group { margin-bottom: 16px; }
     label {
       display: block;
-      font-size: 0.78rem;
+      font-size: 0.77rem;
       text-transform: uppercase;
       letter-spacing: 0.8px;
-      font-weight: 500;
+      font-weight: 600;
       margin-bottom: 6px;
       color: var(--text-ink);
     }
+    /* Teks Maroon Mencolok untuk Mahasiswa & Voucher */
+    .maroon-highlight {
+      color: var(--maroon) !important;
+      font-weight: 600;
+    }
+
     input[type="text"], input[type="date"], select, textarea {
       width: 100%;
       padding: 11px 14px;
-      border: 1px solid var(--gold-light);
+      border: 1px solid var(--gold-champagne);
       font-family: 'Montserrat', sans-serif;
       font-size: 0.88rem;
       background: var(--bg-ivory);
@@ -204,7 +211,7 @@
       outline: none;
     }
     input:focus, textarea:focus, select:focus {
-      border-color: var(--burgundy);
+      border-color: var(--maroon);
       background: #fff;
     }
     .checkbox-row {
@@ -212,21 +219,21 @@
       align-items: flex-start;
       gap: 10px;
       font-size: 0.84rem;
-      margin: 12px 0;
+      margin: 14px 0;
       cursor: pointer;
     }
-    .checkbox-row input { margin-top: 4px; accent-color: var(--burgundy); }
+    .checkbox-row input { margin-top: 4px; accent-color: var(--maroon); }
 
     .promo-summary {
       background: var(--bg-ivory);
-      border-left: 3px solid var(--burgundy);
+      border-left: 3px solid var(--maroon);
       padding: 14px 16px;
       font-size: 0.83rem;
       margin-top: 14px;
     }
     .promo-tag {
       display: inline-block;
-      background: var(--burgundy);
+      background: var(--maroon);
       color: #FAF6F0;
       font-size: 0.72rem;
       letter-spacing: 0.5px;
@@ -235,8 +242,8 @@
     }
     .note-box {
       background: #F6EFE4;
-      border: 1px solid var(--gold-champagne);
-      color: var(--burgundy-dark);
+      border: 1px solid var(--maroon);
+      color: var(--maroon-dark);
       padding: 10px 14px;
       font-size: 0.8rem;
       margin-top: 8px;
@@ -263,14 +270,14 @@
     .product-placeholder {
       height: 150px;
       border: 1px solid var(--gold-champagne);
-      background: linear-gradient(135deg, #F5ECE0, #EFE2D3);
+      background: linear-gradient(135deg, #F5ECE0, #EDE0CE);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
-      color: var(--burgundy);
+      color: var(--maroon);
       font-size: 1.15rem;
       margin-bottom: 12px;
       text-align: center;
@@ -288,42 +295,72 @@
     .product-name {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 600;
-      font-size: 1.15rem;
+      font-size: 1.18rem;
       margin-bottom: 2px;
     }
     .product-price {
-      color: var(--burgundy);
-      font-weight: 500;
+      color: var(--maroon);
+      font-weight: 600;
       font-size: 0.86rem;
       margin-bottom: 12px;
     }
 
     /* Buttons */
     .btn {
-      background: var(--burgundy);
+      background: var(--maroon);
       color: #FAF6F0;
-      border: 1px solid var(--burgundy);
+      border: 1px solid var(--maroon);
       padding: 12px 18px;
       font-family: 'Montserrat', sans-serif;
       font-weight: 500;
-      font-size: 0.78rem;
-      letter-spacing: 1.3px;
+      font-size: 0.76rem;
+      letter-spacing: 1.4px;
       text-transform: uppercase;
       cursor: pointer;
       width: 100%;
       transition: 0.25s;
     }
     .btn:hover {
-      background: var(--burgundy-dark);
-      border-color: var(--burgundy-dark);
+      background: var(--maroon-dark);
+      border-color: var(--maroon-dark);
     }
     .btn-outline {
       background: transparent;
-      border: 1px solid var(--burgundy);
-      color: var(--burgundy);
+      border: 1px solid var(--maroon);
+      color: var(--maroon);
     }
     .btn-outline:hover {
-      background: var(--burgundy);
+      background: var(--maroon);
+      color: #FAF6F0;
+    }
+
+    /* Language Switcher Elegan untuk Open Call */
+    .section-header-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .lang-tabs {
+      display: inline-flex;
+      border: 1px solid var(--gold-champagne);
+      background: var(--bg-ivory);
+    }
+    .lang-tab {
+      background: transparent;
+      border: none;
+      padding: 5px 11px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .lang-tab.active {
+      background: var(--maroon);
       color: #FAF6F0;
     }
 
@@ -342,7 +379,7 @@
       width: 26px;
       height: 26px;
       cursor: pointer;
-      color: var(--burgundy);
+      color: var(--maroon);
       font-weight: 600;
     }
 
@@ -352,7 +389,7 @@
       border: 1px solid var(--gold-light);
       padding: 18px;
       font-size: 0.82rem;
-      max-height: 230px;
+      max-height: 240px;
       overflow-y: auto;
       margin-bottom: 14px;
     }
@@ -363,7 +400,7 @@
     .modal-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(36, 25, 27, 0.65);
+      background: rgba(35, 24, 26, 0.65);
       display: none;
       align-items: center;
       justify-content: center;
@@ -409,8 +446,8 @@
       display: inline-block;
       margin-top: 12px;
       padding: 11px 24px;
-      border: 1px solid var(--burgundy);
-      color: var(--burgundy);
+      border: 1px solid var(--maroon);
+      color: var(--maroon);
       text-decoration: none;
       font-size: 0.76rem;
       letter-spacing: 1.4px;
@@ -418,7 +455,7 @@
       transition: 0.25s;
     }
     .ig-btn:hover {
-      background: var(--burgundy);
+      background: var(--maroon);
       color: #FAF6F0;
     }
   </style>
@@ -430,37 +467,37 @@
   </div>
 
   <div class="container">
-    <!-- HEADER -->
+    <!-- HEADER TANPA LOGO B -->
     <header>
-      <div class="monogram">B</div>
+      <span class="brand-eyebrow">Maison &amp; Atelier</span>
       <h1 class="brand-title">Bellachérie.</h1>
       <p class="brand-tagline">Made by a woman, for women.</p>
       <div class="divider-ornament"></div>
     </header>
 
-    <!-- DOKUMEN PDF & KATALOG (TANPA CANVA & TANPA EMOJI) -->
+    <!-- DOKUMEN PDF: ENGLISH/JP & BAHASA INDONESIA -->
     <div class="link-stack">
       <a href="Normal.pdf.pdf" target="_blank" class="btn-editorial">
         <div class="link-title-wrap">
-          <span class="link-main">Brand Story & Vision</span>
-          <span class="jp-sub">ブランドの物語とビジョン</span>
+          <span class="link-main">Brand Story &amp; Vision</span>
+          <span class="sub-desc">English &amp; 日本語 Edition — Our Vision &amp; Vol. 1</span>
         </div>
-        <span class="link-tag">Document PDF</span>
+        <span class="link-tag">Read PDF</span>
       </a>
 
       <a href="Normal%20(1).pdf" target="_blank" class="btn-editorial">
         <div class="link-title-wrap">
-          <span class="link-main">Official Catalogue & Links — 公式カタログ</span>
-          <span class="jp-sub">Dear, Woman Vol. 1 & Designer Open Call</span>
+          <span class="link-main">Brand Story &amp; Vision — Bahasa Indonesia</span>
+          <span class="sub-desc">Edisi Bahasa Indonesia — Visi Kami &amp; Vol. 1</span>
         </div>
-        <span class="link-tag">Lookbook PDF</span>
+        <span class="link-tag">Baca PDF</span>
       </a>
     </div>
 
     <!-- MEMBER PASS & PRIVILEGE -->
     <section class="card">
       <span class="section-roman">I. Private Privilege</span>
-      <h2 class="section-title">Member Pass & Verification</h2>
+      <h2 class="section-title">Member Pass &amp; Verification</h2>
       <p class="section-sub">
         Lengkapi identitas berikut untuk mengaktifkan potongan otomatis (berlaku 24 jam).
       </p>
@@ -477,7 +514,7 @@
 
       <label class="checkbox-row">
         <input type="checkbox" id="isStudent" onchange="toggleStudentInput(); calculateTotal();">
-        <span><strong>Status Mahasiswa Aktif (+10%)</strong> — wajib melampirkan foto Kartu Tanda Mahasiswa (KTM) saat konfirmasi di WhatsApp.</span>
+        <span class="maroon-highlight">Status Mahasiswa Aktif (+10%) — wajib melampirkan foto Kartu Tanda Mahasiswa (KTM) saat konfirmasi di WhatsApp.</span>
       </label>
 
       <div id="studentDetailBox" style="display:none; margin-bottom: 14px;">
@@ -485,7 +522,7 @@
       </div>
 
       <div class="form-group">
-        <label>Kode Voucher Spesial (+7% — Diverifikasi Admin di WhatsApp)</label>
+        <label class="maroon-highlight">Kode Voucher Spesial (+7% — Diverifikasi Admin di WhatsApp)</label>
         <input type="text" id="voucherInput" placeholder="Masukkan kode voucher jika ada" oninput="calculateTotal()">
         <div id="voucherNote" class="note-box">
           <strong>Catatan Verifikasi Kode:</strong> Kode voucher Anda akan dicantumkan otomatis ke dalam pesan WhatsApp. Potongan <strong>+7%</strong> akan diterapkan langsung setelah admin memverifikasi keaslian dan masa berlaku kode tersebut di chat WhatsApp.
@@ -497,7 +534,7 @@
       </div>
     </section>
 
-    <!-- KATALOG PRODUK (CONTOH SEMENTARA) -->
+    <!-- KATALOG PRODUK -->
     <section class="card">
       <span class="section-roman">II. The Atelier</span>
       <h2 class="section-title">Curated Collection</h2>
@@ -519,7 +556,7 @@
           <span>Subtotal</span>
           <span id="subtotalText">Rp 0</span>
         </div>
-        <div style="display:flex; justify-content:space-between; margin-bottom:6px; color:var(--burgundy);">
+        <div style="display:flex; justify-content:space-between; margin-bottom:6px; color:var(--maroon);">
           <span>Potongan Otomatis (<span id="discountPercentText">0%</span>)</span>
           <span id="discountAmountText">- Rp 0</span>
         </div>
@@ -536,56 +573,56 @@
       <button class="btn" onclick="checkoutWhatsApp()">Proceed to WhatsApp Confirmation</button>
     </section>
 
-    <!-- OPEN DESIGNER SUBMISSION -->
+    <!-- OPEN DESIGNER SUBMISSION (3 BAHASA ELEGAN TANPA MENUMPUK) -->
     <section class="card">
-      <span class="section-roman">IV. Co-Creation</span>
-      <h2 class="section-title">Community Design Open Call</h2>
-      <p class="section-sub">
-        Terbuka untuk seluruh kreator perempuan dari jenjang <strong>SD hingga dewasa</strong> untuk mengirimkan sketsa, cerita karya, serta profil diri.
+      <div class="section-header-flex">
+        <div>
+          <span class="section-roman">IV. Co-Creation</span>
+          <h2 class="section-title" id="ocTitle">Community Design Open Call</h2>
+        </div>
+        <div class="lang-tabs" role="group" aria-label="Language Switcher">
+          <button type="button" class="lang-tab active" onclick="setOpenCallLang('en', this)">EN</button>
+          <button type="button" class="lang-tab" onclick="setOpenCallLang('id', this)">ID</button>
+          <button type="button" class="lang-tab" onclick="setOpenCallLang('jp', this)">JP</button>
+        </div>
+      </div>
+
+      <p class="section-sub" id="ocSubtitle">
+        Open to all female creators from <strong>elementary school (SD) to adults</strong> to submit sketches, design stories, and personal profiles.
       </p>
 
-      <div class="rules-box">
-        <strong>Syarat & Ketentuan Pengiriman Karya (Wajib Dibaca):</strong>
-        <ul style="margin-top:8px;">
-          <li><strong>Tanpa Biaya Pendaftaran:</strong> Seluruh proses pengajuan desain dan CV bersifat 100% gratis.</li>
-          <li><strong>Terbuka untuk Semua Usia:</strong> Mulai dari jenjang SD hingga dewasa. Peserta di bawah usia 17 tahun wajib memperoleh persetujuan orang tua/wali.</li>
-          <li><strong>Orisinalitas Karya:</strong> Desain harus merupakan karya asli yang belum pernah dipublikasikan dan bebas dari pelanggaran hak cipta.</li>
-          <li><strong>Apresiasi Launching (Rp1.000.000):</strong> Karya terpilih yang diproduksi pada edisi rilis akan mencantumkan nama desainer secara penuh dan menerima honorarium awal sebesar <strong>Rp1.000.000</strong>.</li>
-          <li><strong>Royalti Penjualan 2%:</strong> Apabila produk dari desain tersebut terjual mencapai <strong>200 pcs</strong>, desainer berhak memperoleh royalti tambahan sebesar <strong>2%</strong> dari total pendapatan penjualan produk tersebut.</li>
-          <li><strong>Kelengkapan Data:</strong> Pengirim wajib menyertakan CV singkat, alasan/filosofi di balik desain, serta kontak aktif.</li>
-        </ul>
-      </div>
+      <div class="rules-box" id="ocRulesBox"></div>
 
       <label class="checkbox-row">
         <input type="checkbox" id="agreeRules" onchange="toggleDesignerForm()">
-        <span>Saya telah membaca, memahami, dan menyetujui seluruh ketentuan di atas.</span>
+        <span id="ocAgreeLabel">I have read, understood, and agreed to all terms and conditions above.</span>
       </label>
 
       <div id="designerFormArea" style="display:none; margin-top:16px; border-top:1px solid var(--gold-light); padding-top:16px;">
         <div class="form-group">
-          <label>Nama Lengkap Desainer</label>
-          <input type="text" id="desName" placeholder="Nama lengkap">
+          <label id="ocLblName">Designer Full Name</label>
+          <input type="text" id="desName" placeholder="Full name">
         </div>
         <div class="form-group">
-          <label>Usia & Jenjang Pendidikan / Profesi</label>
-          <input type="text" id="desAge" placeholder="Contoh: 12 tahun (SD) / 20 tahun (Mahasiswi)">
+          <label id="ocLblAge">Age &amp; Education Level / Profession</label>
+          <input type="text" id="desAge" placeholder="e.g., 12 y.o. (Elementary) / 20 y.o. (University Student)">
         </div>
         <div class="form-group">
-          <label>Tautan File Desain & CV (Google Drive / Dokumen PDF)</label>
-          <input type="text" id="desLink" placeholder="Tempel tautan Google Drive berisi sketsa & CV">
+          <label id="ocLblLink">Design Sketch &amp; CV Link (Google Drive / PDF)</label>
+          <input type="text" id="desLink" placeholder="Paste Google Drive link containing your sketch & CV">
         </div>
         <div class="form-group">
-          <label>Filosofi & Alasan di Balik Desain</label>
-          <textarea id="desStory" rows="3" placeholder="Tuliskan makna dan cerita di balik rancangan Anda..."></textarea>
+          <label id="ocLblStory">Philosophy &amp; Story Behind the Design</label>
+          <textarea id="desStory" rows="3" placeholder="Share the inspiration and meaning behind your piece..."></textarea>
         </div>
-        <button class="btn" onclick="submitDesignerWA()">Submit Design & CV via WhatsApp</button>
+        <button class="btn" id="ocSubmitBtn" onclick="submitDesignerWA()">Submit Design &amp; CV via WhatsApp</button>
       </div>
     </section>
 
     <!-- REVIEW & KOTAK MASUKAN -->
     <section class="card" style="text-align:center;">
       <span class="section-roman">V. Society Notes</span>
-      <h2 class="section-title">Reviews & Correspondence</h2>
+      <h2 class="section-title">Reviews &amp; Correspondence</h2>
       <p class="section-sub">Baca kesan pelanggan kami atau kirimkan masukan pribadi untuk Bellachérie.</p>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
         <button class="btn btn-outline" onclick="openModal('reviewModal')">Client Reviews</button>
@@ -606,7 +643,7 @@
   <div id="reviewModal" class="modal-overlay">
     <div class="modal-content">
       <button class="close-modal" onclick="closeModal('reviewModal')">×</button>
-      <h3 class="serif" style="font-size:1.8rem; color:var(--burgundy); margin-bottom:4px;">Client Reviews</h3>
+      <h3 class="serif" style="font-size:1.8rem; color:var(--maroon); margin-bottom:4px;">Client Reviews</h3>
       <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:16px;">Catatan pengalaman dari komunitas Bellachérie.</p>
 
       <div id="reviewsContainer"></div>
@@ -634,7 +671,7 @@
   <div id="feedbackModal" class="modal-overlay">
     <div class="modal-content">
       <button class="close-modal" onclick="closeModal('feedbackModal')">×</button>
-      <h3 class="serif" style="font-size:1.8rem; color:var(--burgundy); margin-bottom:4px;">Private Suggestion</h3>
+      <h3 class="serif" style="font-size:1.8rem; color:var(--maroon); margin-bottom:4px;">Private Suggestion</h3>
       <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:16px;">Sampaikan ide atau masukan Anda secara langsung kepada tim kami.</p>
       <div class="form-group">
         <input type="text" id="fbName" placeholder="Nama Anda (opsional)">
@@ -649,7 +686,7 @@
   <script>
     const WA_NUMBER = "818029925628";
 
-    // Daftar Produk Contoh (Silakan ubah nama & harga sesuai koleksimu)
+    // Katalog Produk (Contoh sementara)
     const PRODUCTS = [
       { id: 1, name: "Kassandra Top", price: 245000, tag: "Dear, Woman Vol. 1" },
       { id: 2, name: "Katerina Skirt", price: 275000, tag: "Dear, Woman Vol. 1" },
@@ -657,312 +694,65 @@
       { id: 4, name: "Chérie Everyday Tote", price: 220000, tag: "Limited" }
     ];
 
-    // Kalender Hari Raya & Perayaan Nasional (Otomatis 24 Jam)
-    const FIXED_HOLIDAYS = {
-      "01-01": "New Year's Day",
-      "04-21": "Hari Kartini",
-      "08-17": "Independence Day (17 Agustus)",
-      "11-10": "Hari Pahlawan",
-      "12-25": "Christmas Day"
-    };
-
-    const SPECIAL_DATES_2026 = {
-      "2026-02-17": "Chinese New Year",
-      "2026-03-20": "Eid al-Fitr / Ramadhan",
-      "2026-03-21": "Eid al-Fitr"
-    };
-
-    let cart = {};
-    let holidayDiscount = 0;
-    let holidayName = "";
-
-    function checkCalendarHoliday() {
-      const now = new Date();
-      const yyyy = now.getFullYear();
-      const mm = String(now.getMonth() + 1).padStart(2, '0');
-      const dd = String(now.getDate()).padStart(2, '0');
-      const fullDate = `${yyyy}-${mm}-${dd}`;
-      const monthDay = `${mm}-${dd}`;
-
-      if (SPECIAL_DATES_2026[fullDate]) {
-        holidayDiscount = 5;
-        holidayName = SPECIAL_DATES_2026[fullDate];
-      } else if (FIXED_HOLIDAYS[monthDay]) {
-        holidayDiscount = 5;
-        holidayName = FIXED_HOLIDAYS[monthDay];
-      }
-
-      const banner = document.getElementById("holidayBanner");
-      if (holidayDiscount > 0) {
-        banner.innerHTML = `${holidayName} Privilege — 5% Off Automatically Applied for 24 Hours`;
-      } else {
-        banner.innerHTML = `Bellachérie. Atelier — Private Member & Student Privileges Available`;
-      }
-    }
-
-    function formatRupiah(num) {
-      return "Rp " + num.toLocaleString("id-ID");
-    }
-
-    function renderProducts() {
-      const container = document.getElementById("productList");
-      container.innerHTML = PRODUCTS.map(p => `
-        <div class="product-item">
-          <div>
-            <div class="product-placeholder">
-              <span>${p.tag}</span>
-              Bellachérie.
-            </div>
-            <div class="product-name">${p.name}</div>
-            <div class="product-price">${formatRupiah(p.price)}</div>
-          </div>
-          <button class="btn" onclick="addToCart(${p.id})">Add to Bag</button>
-        </div>
-      `).join("");
-    }
-
-    function addToCart(id) {
-      cart[id] = (cart[id] || 0) + 1;
-      renderCart();
-    }
-
-    function changeQty(id, delta) {
-      if (!cart[id]) return;
-      cart[id] += delta;
-      if (cart[id] <= 0) delete cart[id];
-      renderCart();
-    }
-
-    function toggleStudentInput() {
-      const checked = document.getElementById("isStudent").checked;
-      document.getElementById("studentDetailBox").style.display = checked ? "block" : "none";
-    }
-
-    function getActiveDiscounts() {
-      let autoPercent = 0;
-      let tags = [];
-
-      if (holidayDiscount > 0) {
-        autoPercent += 5;
-        tags.push(`${holidayName} (+5%)`);
-      }
-
-      const dobVal = document.getElementById("buyerDob").value;
-      if (dobVal) {
-        const now = new Date();
-        const todayMD = `${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
-        const dobMD = dobVal.slice(5, 10);
-        if (todayMD === dobMD) {
-          autoPercent += 5;
-          tags.push("Birthday Privilege (+5%)");
-        }
-      }
-
-      const isStudent = document.getElementById("isStudent").checked;
-      if (isStudent) {
-        autoPercent += 10;
-        tags.push("Student Privilege (+10%)");
-      }
-
-      // Kode Voucher tidak memotong otomatis — menunggu verifikasi admin di WA
-      const codeInput = document.getElementById("voucherInput").value.trim().toUpperCase();
-      const voucherNote = document.getElementById("voucherNote");
-      if (codeInput.length > 0) {
-        voucherNote.style.display = "block";
-      } else {
-        voucherNote.style.display = "none";
-      }
-
-      return { autoPercent, tags, codeInput };
-    }
-
-    function calculateTotal() {
-      const { autoPercent, tags, codeInput } = getActiveDiscounts();
-      const summaryEl = document.getElementById("promoSummary");
-
-      let html = "";
-      if (tags.length > 0) {
-        html += `Potongan otomatis aktif:<br>` + tags.map(t => `<span class="promo-tag">${t}</span>`).join("");
-        html += `<div style="margin-top:6px;">Total Potongan Otomatis: <strong>${autoPercent}%</strong></div>`;
-      } else {
-        html += `Belum ada potongan otomatis yang aktif hari ini.`;
-      }
-
-      if (codeInput.length > 0) {
-        html += `<div style="margin-top:6px; color:var(--burgundy);">Kode Voucher <strong>"${codeInput}"</strong> tercatat — menunggu konfirmasi admin di WhatsApp (+7%).</div>`;
-      }
-
-      summaryEl.innerHTML = html;
-
-      let subtotal = 0;
-      for (let id in cart) {
-        const prod = PRODUCTS.find(p => p.id == id);
-        if (prod) subtotal += prod.price * cart[id];
-      }
-
-      const discountAmount = Math.round(subtotal * (autoPercent / 100));
-      const finalTotal = subtotal - discountAmount;
-
-      document.getElementById("subtotalText").innerText = formatRupiah(subtotal);
-      document.getElementById("discountPercentText").innerText = autoPercent + "%";
-      document.getElementById("discountAmountText").innerText = "- " + formatRupiah(discountAmount);
-      document.getElementById("finalTotalText").innerText = formatRupiah(finalTotal);
-    }
-
-    function renderCart() {
-      const container = document.getElementById("cartItems");
-      const ids = Object.keys(cart);
-
-      if (ids.length === 0) {
-        container.innerHTML = `<p style="font-size:0.85rem; color:var(--text-muted);">Tas belanja Anda masih kosong.</p>`;
-      } else {
-        container.innerHTML = ids.map(id => {
-          const prod = PRODUCTS.find(p => p.id == id);
-          return `
-            <div class="cart-row">
-              <div>
-                <strong>${prod.name}</strong><br>
-                <span style="color:var(--text-muted); font-size:0.8rem;">${formatRupiah(prod.price)} x ${cart[id]}</span>
-              </div>
-              <div class="qty-controls">
-                <button onclick="changeQty(${id}, -1)">-</button>
-                <span style="margin:0 8px;">${cart[id]}</span>
-                <button onclick="changeQty(${id}, 1)">+</button>
-              </div>
-            </div>
-          `;
-        }).join("");
-      }
-      calculateTotal();
-    }
-
-    function checkoutWhatsApp() {
-      const ids = Object.keys(cart);
-      if (ids.length === 0) {
-        alert("Tas belanja Anda masih kosong.");
-        return;
-      }
-
-      const name = document.getElementById("buyerName").value.trim() || "Pelanggan Bellachérie.";
-      const dob = document.getElementById("buyerDob").value || "-";
-      const isStudent = document.getElementById("isStudent").checked;
-      const studentInfo = document.getElementById("studentInfo").value.trim() || "-";
-      const { autoPercent, tags, codeInput } = getActiveDiscounts();
-
-      let subtotal = 0;
-      let itemLines = "";
-      ids.forEach(id => {
-        const prod = PRODUCTS.find(p => p.id == id);
-        const lineTotal = prod.price * cart[id];
-        subtotal += lineTotal;
-        itemLines += `- ${prod.name} (${cart[id]}x) = ${formatRupiah(lineTotal)}\n`;
-      });
-
-      const discountAmount = Math.round(subtotal * (autoPercent / 100));
-      const finalTotal = subtotal - discountAmount;
-
-      let message = `Halo Bellachérie., saya ingin melakukan pemesanan:\n\n`;
-      message += `*Data Pemesan:*\n`;
-      message += `Nama: ${name}\n`;
-      message += `Tanggal Lahir: ${dob}\n`;
-      if (isStudent) {
-        message += `Status: Mahasiswa (${studentInfo}) — siap melampirkan foto KTM\n`;
-      }
-      if (codeInput.length > 0) {
-        message += `Kode Voucher (Mohon Verifikasi +7%): ${codeInput}\n`;
-      }
-      message += `\n*Rincian Pesanan:*\n${itemLines}\n`;
-      message += `Subtotal: ${formatRupiah(subtotal)}\n`;
-      message += `Potongan Otomatis (${autoPercent}%): ${tags.length > 0 ? tags.join(", ") : "Tidak ada"}\n`;
-      message += `Nominal Potongan Otomatis: -${formatRupiah(discountAmount)}\n`;
-      message += `*Estimasi Sementara: ${formatRupiah(finalTotal)}*\n`;
-      if (codeInput.length > 0) {
-        message += `(Menunggu konfirmasi validasi kode voucher "${codeInput}" oleh admin untuk tambahan potongan 7%)\n`;
-      }
-      message += `\nMohon konfirmasi ketersediaan dan total akhir pembayaran. Terima kasih.`;
-
-      window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`, "_blank");
-    }
-
-    function toggleDesignerForm() {
-      const agreed = document.getElementById("agreeRules").checked;
-      document.getElementById("designerFormArea").style.display = agreed ? "block" : "none";
-    }
-
-    function submitDesignerWA() {
-      const name = document.getElementById("desName").value.trim();
-      const age = document.getElementById("desAge").value.trim();
-      const link = document.getElementById("desLink").value.trim();
-      const story = document.getElementById("desStory").value.trim();
-
-      if (!name || !age || !link || !story) {
-        alert("Mohon lengkapi seluruh data desainer, tautan file, dan filosofi karya.");
-        return;
-      }
-
-      let msg = `Halo Bellachérie., saya ingin mengajukan karya desain & CV (telah menyetujui Syarat & Ketentuan):\n\n`;
-      msg += `Nama Desainer: ${name}\n`;
-      msg += `Usia / Jenjang: ${age}\n`;
-      msg += `Tautan Desain & CV: ${link}\n`;
-      msg += `Filosofi & Alasan Desain:\n${story}\n\n`;
-      msg += `Terima kasih.`;
-
-      window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, "_blank");
-    }
-
-    const defaultReviews = [
-      { name: "Clarissa W.", rating: "5 / 5", text: "Konsepnya sangat anggun dan berkelas. Senang sekali melihat brand yang benar-benar memberi ruang bagi kreator perempuan." },
-      { name: "Nadia K.", rating: "5 / 5", text: "Pelayanannya sangat personal dan rapi. Potongan ulang tahunnya langsung terhitung otomatis." }
-    ];
-
-    function loadReviews() {
-      const saved = JSON.parse(localStorage.getItem("bellacherie_reviews") || "null") || defaultReviews;
-      const container = document.getElementById("reviewsContainer");
-      container.innerHTML = saved.map(r => `
-        <div class="review-card">
-          <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
-            <strong>${r.name}</strong>
-            <span style="color:var(--burgundy); font-weight:500;">${r.rating}</span>
-          </div>
-          <p>${r.text}</p>
-        </div>
-      `).join("");
-    }
-
-    function addReview() {
-      const name = document.getElementById("revName").value.trim();
-      const rating = document.getElementById("revRating").value;
-      const text = document.getElementById("revText").value.trim();
-      if (!name || !text) {
-        alert("Mohon isi nama dan ulasan Anda.");
-        return;
-      }
-      const saved = JSON.parse(localStorage.getItem("bellacherie_reviews") || "null") || defaultReviews;
-      saved.unshift({ name, rating, text });
-      localStorage.setItem("bellacherie_reviews", JSON.stringify(saved));
-      document.getElementById("revName").value = "";
-      document.getElementById("revText").value = "";
-      loadReviews();
-    }
-
-    function sendFeedback() {
-      const name = document.getElementById("fbName").value.trim() || "Anonim";
-      const msg = document.getElementById("fbMessage").value.trim();
-      if (!msg) {
-        alert("Mohon tuliskan saran atau masukan Anda.");
-        return;
-      }
-      const waText = `Halo Bellachérie., terdapat masukan baru dari website:\n\nDari: ${name}\nPesan: ${msg}`;
-      window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waText)}`, "_blank");
-      closeModal("feedbackModal");
-    }
-
-    function openModal(id) { document.getElementById(id).style.display = "flex"; }
-    function closeModal(id) { document.getElementById(id).style.display = "none"; }
-
-    checkCalendarHoliday();
-    renderProducts();
-    loadReviews();
-  </script>
-</body>
-</html>
+    // Terjemahan Community Design Open Call (EN, ID, JP)
+    const OPEN_CALL_CONTENT = {
+      en: {
+        title: "Community Design Open Call",
+        subtitle: "Open to all female creators from <strong>elementary school (SD) to adults</strong> to submit sketches, design stories, and personal profiles.",
+        rules: `
+          <strong>Submission Terms &amp; Conditions (Please Read Carefully):</strong>
+          <ul style="margin-top:8px;">
+            <li><strong>Zero Submission Fee:</strong> Submitting your design and CV is 100% free of charge.</li>
+            <li><strong>Open to All Ages:</strong> From elementary school students to adults. Creators under 17 must have parental/guardian consent.</li>
+            <li><strong>Originality:</strong> Designs must be 100% original, unpublished works free from copyright infringement.</li>
+            <li><strong>Launch Appreciation (IDR 1,000,000):</strong> Selected designs produced for our launch edition will feature full credit to the creator's name and receive an initial honorarium of <strong>IDR 1,000,000</strong>.</li>
+            <li><strong>2% Sales Royalty:</strong> Once the produced item reaches <strong>200 pcs</strong> sold, the designer is entitled to an additional <strong>2% royalty</strong> from total product sales revenue.</li>
+            <li><strong>Required Documents:</strong> Applicants must include a brief CV, the story/reason behind the design, and active contact details.</li>
+          </ul>
+        `,
+        agree: "I have read, understood, and agreed to all terms and conditions above.",
+        lblName: "Designer Full Name",
+        phName: "Full name",
+        lblAge: "Age & Education Level / Profession",
+        phAge: "e.g., 12 y.o. (Elementary) / 20 y.o. (University Student)",
+        lblLink: "Design Sketch & CV Link (Google Drive / PDF)",
+        phLink: "Paste Google Drive link containing your sketch & CV",
+        lblStory: "Philosophy & Story Behind the Design",
+        phStory: "Share the inspiration and meaning behind your piece...",
+        btn: "Submit Design & CV via WhatsApp"
+      },
+      id: {
+        title: "Pendaftaran Desain Komunitas",
+        subtitle: "Terbuka untuk seluruh kreator perempuan dari jenjang <strong>SD hingga dewasa</strong> untuk mengirimkan sketsa, cerita karya, serta profil diri.",
+        rules: `
+          <strong>Syarat &amp; Ketentuan Pengiriman Karya (Wajib Dibaca):</strong>
+          <ul style="margin-top:8px;">
+            <li><strong>Tanpa Biaya Pendaftaran:</strong> Seluruh proses pengajuan desain dan CV bersifat 100% gratis.</li>
+            <li><strong>Terbuka untuk Semua Usia:</strong> Mulai dari jenjang SD hingga dewasa. Peserta di bawah usia 17 tahun wajib memperoleh persetujuan orang tua/wali.</li>
+            <li><strong>Orisinalitas Karya:</strong> Desain harus merupakan karya asli yang belum pernah dipublikasikan dan bebas dari pelanggaran hak cipta.</li>
+            <li><strong>Apresiasi Launching (Rp1.000.000):</strong> Karya terpilih yang diproduksi pada edisi rilis akan mencantumkan nama desainer secara penuh dan menerima honorarium awal sebesar <strong>Rp1.000.000</strong>.</li>
+            <li><strong>Royalti Penjualan 2%:</strong> Apabila produk dari desain tersebut terjual mencapai <strong>200 pcs</strong>, desainer berhak memperoleh royalti tambahan sebesar <strong>2%</strong> dari total pendapatan penjualan produk tersebut.</li>
+            <li><strong>Kelengkapan Data:</strong> Pengirim wajib menyertakan CV singkat, alasan/filosofi di balik desain, serta kontak aktif.</li>
+          </ul>
+        `,
+        agree: "Saya telah membaca, memahami, dan menyetujui seluruh ketentuan di atas.",
+        lblName: "Nama Lengkap Desainer",
+        phName: "Nama lengkap",
+        lblAge: "Usia & Jenjang Pendidikan / Profesi",
+        phAge: "Contoh: 12 tahun (SD) / 20 tahun (Mahasiswi)",
+        lblLink: "Tautan File Desain & CV (Google Drive / Dokumen PDF)",
+        phLink: "Tempel tautan Google Drive berisi sketsa & CV",
+        lblStory: "Filosofi & Alasan di Balik Desain",
+        phStory: "Tuliskan makna dan cerita di balik rancangan Anda...",
+        btn: "Kirim Desain & CV via WhatsApp"
+      },
+      jp: {
+        title: "コミュニティ・デザイン募集",
+        subtitle: "<strong>小学生から大人まで</strong>、すべての女性クリエイターを対象にデザインスケッチ、作品ストーリー、プロフィール（CV）を募集しています。",
+        rules: `
+          <strong>応募規約・ガイドライン（必ずお読みください）：</strong>
+          <ul style="margin-top:8px;">
+            <li><strong>応募費用無料：</strong> デザインおよび履歴書（CV）の提出は完全に無料です。</li>
+            <li><strong>全年齢対象：</strong> 小学生から一般の方まで応募可能です（17歳未満の方は保護者の同意が必要です）。</li>
+            <li><strong>作品のオリジナリティ：</strong> 未発表のオリジナル作品であり、第三者の著作権を侵害していないものに限ります。</li>
+            <li>
